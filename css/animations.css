@@ -1,0 +1,75 @@
+/* ==========================================================================
+   ANIMATIONS, SIGNATURE INTRO & ACCESSIBILITY OVERRIDES
+   ========================================================================== */
+
+/* ============ SIGNATURE INTRO OVERLAY ============ */
+#signatureIntro {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8vw;
+}
+
+#sigSvg {
+  width: min(78vw, 760px);
+  height: auto;
+  overflow: visible;
+}
+
+.sig-stroke {
+  transition: filter .15s ease;
+}
+
+#penGlowOuter {
+  transition: opacity .15s ease;
+}
+
+#penTrail1,
+#penTrail2 {
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  #signatureIntro {
+    padding: 12vw 6vw;
+  }
+}
+
+/* ============ SCROLL REVEAL INITIAL STATE ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* ============ KEYFRAMES ============ */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .55; }
+}
+
+@keyframes cue {
+  to { top: 100%; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes videoDrift {
+  0%, 100% { background-position: 45% 40%; }
+  50% { background-position: 58% 62%; }
+}
+
+/* ============ REDUCED MOTION PREFERENCE ============ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

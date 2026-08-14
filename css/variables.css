@@ -1,0 +1,19 @@
+/* ==========================================================================
+   CSS VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  --bg: #0D0E10;
+  --surface: #151619;
+  --surface-2: #1D1E22;
+  --paper: #EEEAE2;
+  --muted: #8B8B85;
+  --muted-2: #5B5C58;
+  --amber: #E8862E;
+  --teal: #2FA79B;
+  --line: #2A2B2E;
+  --font-display: 'Archivo Black', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --rail-w: 64px;
+}
