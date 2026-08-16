@@ -15,7 +15,7 @@
 }
 
 #sigSvg {
-  width: min(78vw, 760px);
+  width: min(85vw, 760px);
   height: auto;
   overflow: visible;
 }
