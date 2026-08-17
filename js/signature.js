@@ -190,80 +190,81 @@
     history = [{ x: startPt.x, y: startPt.y }];
     positionPen(startPt.x, startPt.y, 0);
 
-    // Pen tip appears with a warm luminous pulse
+    // Pen tip appears quickly with a luminous flash
     gsap.set(penTip, { opacity: 0, scale: 0, transformOrigin: '50% 50%' });
-    await tweenPromise(penTip, { opacity: 1, scale: 1.5, duration: 0.14, ease: 'sine.out' });
-    await tweenPromise(penTip, { scale: 1, duration: 0.1, ease: 'sine.in' });
+    await tweenPromise(penTip, { opacity: 1, scale: 1.3, duration: 0.08, ease: 'sine.out' });
+    await tweenPromise(penTip, { scale: 1, duration: 0.05, ease: 'sine.in' });
 
     // 2. Draw Capital "I"
-    await drawStroke(capIStroke, 0.44, 'sine.inOut');
+    await drawStroke(capIStroke, 0.28, 'sine.inOut');
 
     // 3. Glide pen to "s-m-a-i-l"
     if (smailStroke) {
       const smailStart = smailStroke.path.getPointAtLength(0);
-      await glidePen(smailStart.x, smailStart.y, 0.08);
-      await drawStroke(smailStroke, 0.68, 'sine.inOut');
+      await glidePen(smailStart.x, smailStart.y, 0.04);
+      await drawStroke(smailStroke, 0.42, 'sine.inOut');
     }
 
     // 4. Glide pen to dot the "i"
     if (dotIStroke) {
       const dotStart = dotIStroke.path.getPointAtLength(0);
-      await glidePen(dotStart.x, dotStart.y, 0.07);
-      await drawStroke(dotIStroke, 0.08, 'power1.out');
+      await glidePen(dotStart.x, dotStart.y, 0.035);
+      await drawStroke(dotIStroke, 0.05, 'power1.out');
     }
 
     // 5. Glide pen to "Khan"
     if (khanStroke) {
       const khanStart = khanStroke.path.getPointAtLength(0);
-      await glidePen(khanStart.x, khanStart.y, 0.09);
-      await drawStroke(khanStroke, 0.72, 'sine.inOut');
+      await glidePen(khanStart.x, khanStart.y, 0.04);
+      await drawStroke(khanStroke, 0.44, 'sine.inOut');
     }
 
     // 6. Glide pen to Main Underline
     if (underline1Stroke) {
       const u1Start = underline1Stroke.path.getPointAtLength(0);
-      await glidePen(u1Start.x, u1Start.y, 0.09);
-      await drawStroke(underline1Stroke, 0.34, 'power1.out');
+      await glidePen(u1Start.x, u1Start.y, 0.04);
+      await drawStroke(underline1Stroke, 0.20, 'power1.out');
     }
 
     // 7. Glide pen to Secondary Underline Accent
     if (underline2Stroke) {
       const u2Start = underline2Stroke.path.getPointAtLength(0);
-      await glidePen(u2Start.x, u2Start.y, 0.07);
-      await drawStroke(underline2Stroke, 0.22, 'power1.out');
+      await glidePen(u2Start.x, u2Start.y, 0.03);
+      await drawStroke(underline2Stroke, 0.14, 'power1.out');
     }
 
     // 8. Glide pen to Smiley Face
     for (const eye of smileyEyes) {
       const eyeStart = eye.path.getPointAtLength(0);
-      await glidePen(eyeStart.x, eyeStart.y, 0.06);
-      await drawStroke(eye, 0.05, 'power2.out');
+      await glidePen(eyeStart.x, eyeStart.y, 0.03);
+      await drawStroke(eye, 0.035, 'power2.out');
     }
 
     if (smileySmile) {
       const smileStart = smileySmile.path.getPointAtLength(0);
-      await glidePen(smileStart.x, smileStart.y, 0.06);
-      await drawStroke(smileySmile, 0.12, 'sine.out');
+      await glidePen(smileStart.x, smileStart.y, 0.03);
+      await drawStroke(smileySmile, 0.08, 'sine.out');
     }
 
     // 9. Pen lifts away smoothly
-    await tweenPromise(penTip, { y: '-=14', opacity: 0, duration: 0.2, ease: 'power2.out' });
+    tweenPromise(penTip, { y: '-=12', opacity: 0, duration: 0.12, ease: 'power2.out' });
 
-    // 10. Finished signature breathes with a warm ambient amber bloom
+    // 10. Immediate amber shimmer bloom (no dead pause)
     await new Promise((res) => {
-      gsap.timeline({ delay: 0.3, onComplete: res })
-        .to(strokeGroup, { filter: 'drop-shadow(0 0 14px rgba(232,134,46,0.65))', duration: 0.35, ease: 'sine.out' })
-        .to(strokeGroup, { filter: 'drop-shadow(0 0 0px rgba(232,134,46,0))', duration: 0.4, ease: 'sine.in' });
+      gsap.timeline({ delay: 0.05, onComplete: res })
+        .to(strokeGroup, { filter: 'drop-shadow(0 0 12px rgba(232,134,46,0.6))', duration: 0.18, ease: 'sine.out' })
+        .to(strokeGroup, { filter: 'drop-shadow(0 0 0px rgba(232,134,46,0))', duration: 0.22, ease: 'sine.in' });
     });
 
-    // 11. Signature dissolves seamlessly while hero section emerges
+    // 11. Immediate seamless transition to Hero
     gsap.timeline()
-      .to('#signatureIntro', { opacity: 0, scale: 1.04, filter: 'blur(8px)', duration: 0.95, ease: 'power2.inOut' }, 0)
-      .to('#hero', { opacity: 1, y: 0, duration: 0.95, ease: 'power2.out' }, 0)
-      .call(() => { triggerHero(); }, null, 0.2)
+      .to('#signatureIntro', { opacity: 0, scale: 1.03, filter: 'blur(6px)', duration: 0.65, ease: 'power2.inOut' }, 0)
+      .to('#hero', { opacity: 1, y: 0, duration: 0.65, ease: 'power2.out' }, 0)
+      .call(() => { triggerHero(); }, null, 0.05)
       .set('#signatureIntro', { display: 'none' });
   }
 
-  gsap.delayedCall(0.18, playSequence);
+  gsap.delayedCall(0.06, playSequence);
 })();
+
 

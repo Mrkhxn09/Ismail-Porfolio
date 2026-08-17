@@ -42,10 +42,10 @@
   }
 
   // buttons — cursor tightens, dot hides, no label
-  bindState('.btn-primary, .btn-ghost, .filter-btn, .reel-btn, .copy-email-btn, .side-nav-item', 'state-btn');
+  bindState('.btn-primary, .btn-ghost, .filter-btn, .reel-btn, .copy-email-btn, .side-nav-item, .contact-email-card, .contact-main-btn, .contact-resume-btn, .contact-copy-pill, .reel-ctl-btn, .reel-big-play, .playlist-item, .csv-close-btn, .csv-nav-card', 'state-btn');
 
   // real project / video cards with a "view" destination
-  bindState('.case-media, .video-card', 'state-card');
+  bindState('.case-media, .video-card, [data-case-id]', 'state-card');
 
   // everything else interactive — a gentler, moderate reaction
   bindState('.ik-letter, .service-card, .tool-card, .timeline-step, .float-card, .case-cta, .contact-socials a, header.nav nav a, .logo, .hero-scrollcue', 'state-generic');

@@ -82,12 +82,13 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   navObserver.observe(aboutSection);
 
   // Scroll-spy: highlight the current section in the side nav
-  const spySections = ['about', 'work', 'process', 'reel', 'contact'];
+  const spySections = ['about', 'featured', 'work', 'process', 'reel', 'contact'];
   const sideItems = sideNav.querySelectorAll('.side-nav-item');
 
   function setActive(id) {
+    const targetSection = (id === 'featured') ? 'work' : id;
     sideItems.forEach((item) => {
-      item.classList.toggle('active', item.dataset.section === id);
+      item.classList.toggle('active', item.dataset.section === targetSection);
     });
   }
 

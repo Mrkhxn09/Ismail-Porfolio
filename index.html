@@ -16,13 +16,17 @@
 </head>
 <body>
 
-  <!-- Sitewide Ambient Background -->
+  <!-- Minimal 2px Global Scroll Progress Bar -->
+  <div id="globalScrollProgress" class="global-scroll-progress" aria-hidden="true"></div>
+
+  <!-- Sitewide Ambient Background & Mist -->
   <div class="bg-ambient" aria-hidden="true">
     <div class="bg-blob bg-blob-1"></div>
     <div class="bg-blob bg-blob-2"></div>
     <div class="bg-blob bg-blob-3"></div>
     <div class="bg-blob bg-blob-4"></div>
   </div>
+  <div class="bg-mist" id="bgMist" aria-hidden="true"></div>
   <div class="grain"></div>
 
   <!-- Custom Cursor Elements -->
@@ -142,18 +146,19 @@
       <div class="hero-frame">
         <div class="hero-topline">
           <div class="hero-kicker"><span class="dot"></span>AVAILABLE FOR PROJECTS — 2026</div>
-          <p class="hero-super"><em>UI/UX Design for digital products<br>that solve real business problems.</em><br>Backed by graphic design and motion design.</p>
+          <p class="hero-super"><strong class="hero-title-ui">UI/UX Designer</strong><br><em>Designing digital experiences that solve real business problems.</em><br><span class="hero-subtext">Backed by graphic design and motion design.</span></p>
         </div>
 
         <div class="hero-anchor">
+          <div class="hero-portrait-aura" aria-hidden="true"></div>
           <div class="hero-portrait">
             <img class="art" src="assets/images/ismail-portrait.webp" alt="Ismail Khan" loading="eager" decoding="async">
           </div>
 
           <div class="hero-overlay">
             <h1 class="hero-name">
-              <span class="line"><span class="letter-reveal"><span class="ik-letter" data-letter="I">I<span class="sketch-pop" style="--rot:-6deg"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 9v11"/></svg><em>UI / UX</em></span></span><span class="ik-letter" data-letter="S">S<span class="sketch-pop" style="--rot:4deg"><svg viewBox="0 0 24 24"><path d="M4 20L14 10M14 10l6-6M14 10l4 4M4 20l3-7"/></svg><em>Identity</em></span></span><span class="ik-letter" data-letter="M">M<span class="sketch-pop" style="--rot:-4deg"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg><em>Motion</em></span></span><span class="ik-letter" data-letter="A">A<span class="sketch-pop" style="--rot:6deg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg><em>Color</em></span></span><span class="ik-letter" data-letter="I">I<span class="sketch-pop" style="--rot:-5deg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6"/></svg><em>Focus</em></span></span><span class="ik-letter" data-letter="L">L<span class="sketch-pop" style="--rot:5deg"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg><em>Speed</em></span></span></span></span>
-              <span class="line"><span class="letter-reveal"><span class="ik-letter" data-letter="K">K<span class="sketch-pop" style="--rot:-4deg"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="2"/></svg><em>Frames</em></span></span><span class="ik-letter" data-letter="H">H<span class="sketch-pop" style="--rot:6deg"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><em>Type</em></span></span><span class="ik-letter" data-letter="A">A<span class="sketch-pop" style="--rot:-5deg"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L6.5 20l2-7-5.5-4h7z"/></svg><em>Craft</em></span></span><span class="ik-letter" data-letter="N">N<span class="sketch-pop" style="--rot:4deg"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.2-8.5"/><path d="M21 3v9h-9"/></svg><em>Flow</em></span></span></span></span>
+              <span class="line"><span class="letter-reveal"><span class="ik-letter" data-letter="I">I<span class="sketch-pop" style="--rot:-6deg"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11"/></svg><em>Interface</em></span></span><span class="ik-letter" data-letter="S">S<span class="sketch-pop" style="--rot:4deg"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg><em>Social Design</em></span></span><span class="ik-letter" data-letter="M">M<span class="sketch-pop" style="--rot:-4deg"><svg viewBox="0 0 24 24"><polygon points="6,4 18,12 6,20"/><line x1="18" y1="4" x2="18" y2="20"/></svg><em>Motion</em></span></span><span class="ik-letter" data-letter="A">A<span class="sketch-pop" style="--rot:6deg"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L6.5 20l2-7-5.5-4h7z"/></svg><em>Art Direction</em></span></span><span class="ik-letter" data-letter="I">I<span class="sketch-pop" style="--rot:-5deg"><svg viewBox="0 0 24 24"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/><circle cx="12" cy="12" r="3"/></svg><em>Identity</em></span></span><span class="ik-letter" data-letter="L">L<span class="sketch-pop" style="--rot:5deg"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><em>Layouts</em></span></span></span></span>
+              <span class="line"><span class="letter-reveal"><span class="ik-letter" data-letter="K">K<span class="sketch-pop" style="--rot:-4deg"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><em>Kinetic</em></span></span><span class="ik-letter" data-letter="H">H<span class="sketch-pop" style="--rot:6deg"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h12M4 18h8"/></svg><em>Hierarchy</em></span></span><span class="ik-letter" data-letter="A">A<span class="sketch-pop" style="--rot:-5deg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><em>Ad Creatives</em></span></span><span class="ik-letter" data-letter="N">N<span class="sketch-pop" style="--rot:4deg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg><em>Navigation</em></span></span></span></span>
             </h1>
 
             <div class="hero-roles">
@@ -173,7 +178,7 @@
             </div>
 
             <div class="hero-copy-email">
-              <span id="heroEmailText">hello@ismailkhan.design</span>
+              <span id="heroEmailText">ismailkhan04463@gmail.com</span>
               <button type="button" class="copy-email-btn" id="copyEmailBtn" aria-label="Copy email address to clipboard">
                 <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                 <span id="copyEmailLabel">Copy</span>
@@ -216,72 +221,125 @@
 
     <!-- ============ ABOUT SECTION ============ -->
     <section id="about">
-      <div class="eyebrow">Clip 01 — About</div>
-      <h2 class="h-title reveal">Design that solves<br>real business problems.</h2>
+      <div class="eyebrow about-eyebrow">CLIP 01 — ABOUT</div>
+      <h2 class="h-title about-title reveal">Design that solves<br>real business problems.</h2>
       <p class="about-lead reveal">I combine interface design, brand identity and motion to help teams ship products people actually want to use.</p>
 
       <div class="service-grid">
-        <div class="service-card reveal">
-          <span class="service-num mono">01 / 03</span>
+        <div class="service-card service-card-primary reveal">
+          <div class="service-num mono"><span>01 / 03</span><span class="service-tag">PRIMARY</span></div>
           <svg class="service-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 9v11"/></svg>
           <h3>UI/UX Design</h3>
           <p>I design intuitive digital products that turn user needs into measurable business results.</p>
         </div>
         <div class="service-card reveal">
-          <span class="service-num mono">02 / 03</span>
+          <div class="service-num mono"><span>02 / 03</span></div>
           <svg class="service-icon" viewBox="0 0 24 24"><path d="M4 20L14 10M14 10l6-6M14 10l4 4M4 20l3-7"/></svg>
           <h3>Graphic Design</h3>
-          <p>I build brand identities and visual systems that make businesses instantly recognizable.</p>
+          <p>I build visual identities and systems that make brands clear, consistent and recognizable.</p>
         </div>
         <div class="service-card reveal">
-          <span class="service-num mono">03 / 03</span>
+          <div class="service-num mono"><span>03 / 03</span></div>
           <svg class="service-icon" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
           <h3>Motion Design</h3>
-          <p>I create motion and video content that brings static ideas to life and holds attention.</p>
+          <p>I use motion and video to turn ideas into engaging visual experiences.</p>
         </div>
       </div>
 
       <div class="tools-head">
-        <div class="eyebrow">Software</div>
-        <h3 class="h-title reveal" style="font-size:clamp(1.6rem,3.2vw,2.4rem);">Tools I reach for<br>every day.</h3>
+        <div class="eyebrow">— SOFTWARE</div>
+        <h3 class="h-title reveal" style="font-size:clamp(1.8rem,3.4vw,2.6rem);">Tools I reach for<br>every day.</h3>
       </div>
 
-      <div class="tools-grid">
-        <div class="tool-card reveal" data-pct="95">
-          <div class="tool-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 9v11"/></svg></div>
-          <div class="tool-name">Figma</div>
-          <div class="tool-pct-row"><span class="tool-pct mono">95%</span></div>
-          <div class="tool-bar-track"><div class="tool-bar-fill"></div></div>
+      <!-- Floating Interactive Tool Ecosystem -->
+      <div class="tools-ecosystem" id="toolsEcosystem">
+        <div class="tools-ambient-glow" aria-hidden="true"></div>
+
+        <!-- Connecting Subtle Filaments -->
+        <svg class="tools-filaments" id="toolsFilaments" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+          <line class="filament" data-from="figma" data-to="framer" x1="500" y1="300" x2="780" y2="170" />
+          <line class="filament" data-from="figma" data-to="illustrator" x1="500" y1="300" x2="220" y2="250" />
+          <line class="filament" data-from="illustrator" data-to="canva" x1="220" y1="250" x2="280" y2="470" />
+          <line class="filament" data-from="figma" data-to="davinci" x1="500" y1="300" x2="740" y2="450" />
+          <line class="filament" data-from="davinci" data-to="capcut" x1="740" y1="450" x2="480" y2="130" />
+        </svg>
+
+        <!-- 1. Figma (Primary Anchor — Foreground) -->
+        <div class="tool-node tool-anchor" data-tool="figma" data-depth="foreground" style="--base-x: 50%; --base-y: 50%;">
+          <div class="tool-node-inner">
+            <div class="tool-badge">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 9v11"/></svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-title">Figma</span>
+              <span class="tool-sub">Interface &amp; Systems</span>
+            </div>
+          </div>
         </div>
-        <div class="tool-card reveal" data-pct="85">
-          <div class="tool-icon"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg></div>
-          <div class="tool-name">Framer</div>
-          <div class="tool-pct-row"><span class="tool-pct mono">85%</span></div>
-          <div class="tool-bar-track"><div class="tool-bar-fill"></div></div>
+
+        <!-- 2. Framer (Interactive Motion — Upper Right) -->
+        <div class="tool-node" data-tool="framer" data-depth="midground" style="--base-x: 78%; --base-y: 28%;">
+          <div class="tool-node-inner">
+            <div class="tool-badge">
+              <svg viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-title">Framer</span>
+              <span class="tool-sub">Interactive Motion</span>
+            </div>
+          </div>
         </div>
-        <div class="tool-card reveal" data-pct="88">
-          <div class="tool-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M12 9a3 3 0 0 1 3-3"/></svg></div>
-          <div class="tool-name">Illustrator</div>
-          <div class="tool-pct-row"><span class="tool-pct mono">88%</span></div>
-          <div class="tool-bar-track"><div class="tool-bar-fill"></div></div>
+
+        <!-- 3. Adobe Illustrator (Vector Craft — Left) -->
+        <div class="tool-node" data-tool="illustrator" data-depth="midground" style="--base-x: 22%; --base-y: 42%;">
+          <div class="tool-node-inner">
+            <div class="tool-badge">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M12 9a3 3 0 0 1 3-3"/></svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-title">Illustrator</span>
+              <span class="tool-sub">Vector &amp; Identity</span>
+            </div>
+          </div>
         </div>
-        <div class="tool-card reveal" data-pct="90">
-          <div class="tool-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"/><rect x="12" y="12" width="8" height="8" rx="1.5"/><path d="M8 13a4 4 0 0 0 0 8"/></svg></div>
-          <div class="tool-name">Canva</div>
-          <div class="tool-pct-row"><span class="tool-pct mono">90%</span></div>
-          <div class="tool-bar-track"><div class="tool-bar-fill"></div></div>
+
+        <!-- 4. Canva (Visual Assets — Lower Left) -->
+        <div class="tool-node" data-tool="canva" data-depth="background" style="--base-x: 28%; --base-y: 78%;">
+          <div class="tool-node-inner">
+            <div class="tool-badge">
+              <svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="4"/><rect x="12" y="12" width="8" height="8" rx="1.5"/><path d="M8 13a4 4 0 0 0 0 8"/></svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-title">Canva</span>
+              <span class="tool-sub">Rapid Layouts</span>
+            </div>
+          </div>
         </div>
-        <div class="tool-card reveal" data-pct="82">
-          <div class="tool-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></div>
-          <div class="tool-name">DaVinci Resolve</div>
-          <div class="tool-pct-row"><span class="tool-pct mono">82%</span></div>
-          <div class="tool-bar-track"><div class="tool-bar-fill"></div></div>
+
+        <!-- 5. DaVinci Resolve (Color & Film Grade — Lower Right) -->
+        <div class="tool-node" data-tool="davinci" data-depth="midground" style="--base-x: 74%; --base-y: 75%;">
+          <div class="tool-node-inner">
+            <div class="tool-badge">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-title">DaVinci Resolve</span>
+              <span class="tool-sub">Color &amp; Grade</span>
+            </div>
+          </div>
         </div>
-        <div class="tool-card reveal" data-pct="87">
-          <div class="tool-icon"><svg viewBox="0 0 24 24"><path d="M4 5l16 14M20 5 4 19"/><circle cx="4" cy="5" r="1.6"/><circle cx="20" cy="5" r="1.6"/><circle cx="4" cy="19" r="1.6"/><circle cx="20" cy="19" r="1.6"/></svg></div>
-          <div class="tool-name">CapCut</div>
-          <div class="tool-pct-row"><span class="tool-pct mono">87%</span></div>
-          <div class="tool-bar-track"><div class="tool-bar-fill"></div></div>
+
+        <!-- 6. CapCut (Dynamic Edit — Upper Center) -->
+        <div class="tool-node" data-tool="capcut" data-depth="background" style="--base-x: 48%; --base-y: 22%;">
+          <div class="tool-node-inner">
+            <div class="tool-badge">
+              <svg viewBox="0 0 24 24"><path d="M4 5l16 14M20 5 4 19"/><circle cx="4" cy="5" r="1.6"/><circle cx="20" cy="5" r="1.6"/><circle cx="4" cy="19" r="1.6"/><circle cx="20" cy="19" r="1.6"/></svg>
+            </div>
+            <div class="tool-info">
+              <span class="tool-title">CapCut</span>
+              <span class="tool-sub">Dynamic Edit</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -290,10 +348,10 @@
     <section id="featured">
       <div class="featured-glow" aria-hidden="true"></div>
       <div class="featured-inner">
-        <div class="eyebrow">★ Featured Project</div>
+        <div class="eyebrow featured-eyebrow">★ FEATURED CASE STUDY</div>
 
         <div class="featured-head">
-          <h2 class="h-title reveal">Fintra —<br>Banking, simplified.</h2>
+          <h2 class="h-title featured-title reveal">Fintra <span class="accent-dash">—</span><br>Banking, simplified.</h2>
           <div class="featured-meta reveal">
             <div class="fm-item">
               <span class="fm-label">Role</span>
@@ -303,136 +361,400 @@
               <span class="fm-label">Timeline</span>
               <span class="fm-value">12 Weeks</span>
             </div>
+            <div class="fm-item">
+              <span class="fm-label">Discipline</span>
+              <span class="fm-value">UI/UX Design</span>
+            </div>
+            <div class="fm-item">
+              <span class="fm-label">Focus</span>
+              <span class="fm-value">Fintech / Banking</span>
+            </div>
           </div>
         </div>
 
-        <div class="featured-mockup reveal">
+        <div class="featured-mockup reveal" id="featuredMockup">
           <div class="mockup-bar">
-            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-            <span class="url mono">fintra.app/dashboard</span>
+            <div class="mockup-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="mockup-url-pill">
+              <svg viewBox="0 0 24 24" class="url-lock"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span class="url mono">fintra.app/dashboard</span>
+            </div>
+            <div class="mockup-bar-actions">
+              <span></span><span></span>
+            </div>
           </div>
-          <div class="mockup-canvas">
-            <div class="art"></div>
-            <div class="scan"></div>
-            <div class="ratio mono">16:9</div>
+
+          <!-- High-Fidelity Fintra Product Interface -->
+          <div class="mockup-canvas fintra-app-ui">
+            <!-- App Topbar -->
+            <div class="fintra-topbar">
+              <div class="fintra-brand">
+                <div class="fintra-logo-mark">F</div>
+                <span class="fintra-brand-name">Fintra</span>
+              </div>
+              <div class="fintra-nav-links">
+                <span class="fnav-item active">Overview</span>
+                <span class="fnav-item">Analytics</span>
+                <span class="fnav-item">Cards</span>
+                <span class="fnav-item">Vaults</span>
+              </div>
+              <div class="fintra-user">
+                <span class="fuser-avatar">IK</span>
+              </div>
+            </div>
+
+            <!-- App Dashboard Main Grid -->
+            <div class="fintra-dashboard-body">
+              <!-- Left Column: Balance Hero & Chart -->
+              <div class="fintra-main-col">
+                <div class="fintra-balance-card">
+                  <div class="fbc-top">
+                    <span class="fbc-label">TOTAL PORTFOLIO VALUE</span>
+                    <span class="fbc-badge mono">+14.8% <svg viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg></span>
+                  </div>
+                  <div class="fbc-amount mono">$84,240<span class="cents">.50</span></div>
+                  <div class="fbc-actions">
+                    <div class="fbc-btn active"><span>Transfer</span></div>
+                    <div class="fbc-btn"><span>Request</span></div>
+                    <div class="fbc-btn"><span>Exchange</span></div>
+                    <div class="fbc-btn"><span>Deposit</span></div>
+                  </div>
+                </div>
+
+                <!-- Spend & Cashflow Analytics Chart -->
+                <div class="fintra-chart-card">
+                  <div class="fcc-header">
+                    <div>
+                      <span class="fcc-title">Cashflow Analytics</span>
+                      <span class="fcc-sub mono">Net Inflow vs Expenses</span>
+                    </div>
+                    <div class="fcc-tabs mono">
+                      <span>1W</span>
+                      <span class="active">1M</span>
+                      <span>1Y</span>
+                    </div>
+                  </div>
+                  <div class="fcc-chart-stage">
+                    <svg viewBox="0 0 500 120" preserveAspectRatio="none" class="chart-svg">
+                      <defs>
+                        <linearGradient id="fintraChartGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#2FA79B" stop-opacity="0.38"/>
+                          <stop offset="100%" stop-color="#2FA79B" stop-opacity="0.0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,90 Q70,40 140,65 T280,30 T420,18 L500,28 L500,120 L0,120 Z" fill="url(#fintraChartGrad)"/>
+                      <path d="M0,90 Q70,40 140,65 T280,30 T420,18 L500,28" fill="none" stroke="#2FA79B" stroke-width="2.5"/>
+                      <circle cx="420" cy="18" r="4.5" fill="#E8862E" stroke="#0D0E10" stroke-width="2"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Card Preview & Transactions -->
+              <div class="fintra-side-col">
+                <!-- Virtual Platinum Card -->
+                <div class="fintra-card-widget">
+                  <div class="fcw-header">
+                    <span class="fcw-type mono">PLATINUM DEBIT</span>
+                    <span class="fcw-chip"></span>
+                  </div>
+                  <div class="fcw-num mono">•••• •••• •••• 8842</div>
+                  <div class="fcw-footer">
+                    <div>
+                      <span class="fcw-lbl mono">CARDHOLDER</span>
+                      <span class="fcw-name">ISMAIL KHAN</span>
+                    </div>
+                    <span class="fcw-exp mono">09/28</span>
+                  </div>
+                </div>
+
+                <!-- Recent Activity Feed -->
+                <div class="fintra-tx-widget">
+                  <div class="ftx-title mono">RECENT TRANSACTIONS</div>
+                  <div class="ftx-list">
+                    <div class="ftx-item">
+                      <div class="ftx-icon"><span>⚡</span></div>
+                      <div class="ftx-info">
+                        <span class="ftx-name">Figma Pro Subscription</span>
+                        <span class="ftx-date mono">Today, 2:40 PM</span>
+                      </div>
+                      <span class="ftx-amt neg mono">-$15.00</span>
+                    </div>
+                    <div class="ftx-item">
+                      <div class="ftx-icon"><span>✦</span></div>
+                      <div class="ftx-info">
+                        <span class="ftx-name">Stripe Payout</span>
+                        <span class="ftx-date mono">Yesterday</span>
+                      </div>
+                      <span class="ftx-amt pos mono">+$4,200.00</span>
+                    </div>
+                    <div class="ftx-item">
+                      <div class="ftx-icon"><span>🍎</span></div>
+                      <div class="ftx-info">
+                        <span class="ftx-name">Apple Developer Program</span>
+                        <span class="ftx-date mono">Aug 14</span>
+                      </div>
+                      <span class="ftx-amt neg mono">-$99.00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mockup-scan-overlay"></div>
           </div>
         </div>
 
-        <div class="featured-details">
-          <div class="fd-col reveal">
-            <h4>Problem</h4>
-            <p>Users were dropping out of onboarding at a 40% rate, and the existing dashboard buried the one number people actually opened the app to check.</p>
+        <!-- Project Context & Minimal Case Study CTA -->
+        <div class="featured-footer reveal">
+          <p class="featured-statement">Fintra rethinks everyday banking through a simpler, clearer and more intuitive digital experience.</p>
+          <div class="featured-action">
+            <button class="btn-primary featured-btn" data-case-id="fintra" aria-label="Open Fintra Case Study">
+              <span>View Case Study</span>
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
           </div>
-          <div class="fd-col reveal">
-            <h4>Solution</h4>
-            <p>Rebuilt onboarding into three lightweight steps and redesigned the dashboard around a single glanceable spend summary, backed by a shared component library.</p>
-          </div>
-          <div class="fd-col reveal">
-            <h4>Results</h4>
-            <p>Onboarding completion rose to 89%, navigation-related support tickets dropped by half, and the component library now powers three other internal tools.</p>
-          </div>
-        </div>
-
-        <div class="featured-cta reveal">
-          <a href="#" class="btn-primary">
-            <span>View Full Case Study</span>
-            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
         </div>
       </div>
     </section>
 
     <!-- ============ WORK SECTION ============ -->
     <section id="work">
-      <div class="eyebrow">Clip 02 — Selected Work</div>
-      <h2 class="h-title reveal">Five cuts from<br>the reel.</h2>
+      <div class="eyebrow">CLIP 02 — SELECTED WORK</div>
+      <h2 class="h-title reveal">Work that makes<br>brands visible.</h2>
 
       <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
         <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
         <button class="filter-btn" data-filter="uiux" role="tab" aria-selected="false">UI/UX</button>
-        <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
         <button class="filter-btn" data-filter="graphic" role="tab" aria-selected="false">Graphic Design</button>
-        <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Video Editing</button>
+        <button class="filter-btn" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+        <button class="filter-btn" data-filter="social" role="tab" aria-selected="false">Social Media</button>
+        <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Video</button>
       </div>
 
       <div class="work-grid">
-        <!-- Nocturne -->
-        <div class="case-card" data-category="branding">
-          <a href="#" class="case-media" aria-label="View Nocturne case study">
-            <div class="case-img" style="background:linear-gradient(135deg,#E8862E,#7A3B12);"><img class="case-photo" src="https://picsum.photos/seed/nocturne-restaurant-92/900/700" alt="Nocturne project reference photo" loading="lazy"></div>
+        <!-- 01: Apex Trading Terminal (UI/UX - Featured Wide) -->
+        <div class="case-card case-card-featured" data-category="uiux">
+          <a href="#" class="case-media" data-case-id="apex" aria-label="View Apex Trading Terminal case study">
+            <div class="case-canvas case-art-uiux">
+              <div class="ui-mockup-window">
+                <div class="ui-mockup-header">
+                  <div class="ui-dot-group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                  <span class="ui-title-pill mono">APEX TERMINAL v2.4</span>
+                  <span class="ui-live-tag mono"><span class="live-dot"></span> LIVE FEED</span>
+                </div>
+                <div class="ui-mockup-content">
+                  <div class="ui-col-left">
+                    <div class="ui-metric-row">
+                      <div>
+                        <span class="ui-metric-label mono">TOTAL LIQUIDITY</span>
+                        <span class="ui-metric-val mono">$1,420,890.00</span>
+                      </div>
+                      <span class="ui-gain-badge mono">+28.4% 24h</span>
+                    </div>
+                    <div class="ui-chart-canvas">
+                      <svg viewBox="0 0 600 130" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="apexGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#E8862E" stop-opacity="0.35"/>
+                            <stop offset="100%" stop-color="#E8862E" stop-opacity="0"/>
+                          </linearGradient>
+                        </defs>
+                        <path d="M0,105 Q90,75 180,90 T360,40 T540,25 L600,35 L600,130 L0,130 Z" fill="url(#apexGrad)"/>
+                        <path d="M0,105 Q90,75 180,90 T360,40 T540,25 L600,35" fill="none" stroke="#E8862E" stroke-width="2.5"/>
+                        <circle cx="540" cy="25" r="4" fill="#2FA79B" stroke="#0D0E10" stroke-width="2"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ui-col-right">
+                    <span class="ui-ob-title mono">ORDER BOOK DEPTH</span>
+                    <div class="ui-ob-row pos mono"><span>42,850.00</span><span>1.420 BTC</span></div>
+                    <div class="ui-ob-row pos mono"><span>42,845.50</span><span>0.850 BTC</span></div>
+                    <div class="ui-ob-row neg mono"><span>42,810.00</span><span>2.105 BTC</span></div>
+                    <div class="ui-ob-row neg mono"><span>42,790.20</span><span>3.440 BTC</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="case-scan"></div>
             <span class="case-index mono">01</span>
           </a>
           <div class="case-body">
-            <span class="case-category mono">Brand Identity</span>
-            <h3 class="case-title">Nocturne</h3>
-            <p class="case-desc">A full identity rebuild for a late-night restaurant group — wordmark, print system and packaging built around low light and warm brass tones.</p>
-            <div class="case-tools"><span>Print</span><span>Packaging</span></div>
-            <a href="#" class="case-cta"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="case-category mono">01 — UI/UX Design</span>
+            <h3 class="case-title">Apex Pro Trading Terminal</h3>
+            <p class="case-desc">Next-generation multi-asset trading platform — multi-tier order execution, real-time depth analytics, and dark glass design system.</p>
+            <div class="case-tools"><span>UI/UX Design</span><span>Design System</span><span>Prototyping</span></div>
+            <button class="case-cta" data-case-id="apex"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
 
-        <!-- Fintra -->
-        <div class="case-card" data-category="uiux">
-          <a href="#" class="case-media" aria-label="View Fintra case study">
-            <div class="case-img" style="background:linear-gradient(135deg,#17332F,#2FA79B);"><img class="case-photo" src="https://picsum.photos/seed/fintra-banking-app-44/900/700" alt="Fintra project reference photo" loading="lazy"></div>
+        <!-- 02: Pulse Healthcare (Social Media) -->
+        <div class="case-card" data-category="social">
+          <a href="#" class="case-media" data-case-id="pulse" aria-label="View Pulse Healthcare Social Campaign">
+            <div class="case-canvas case-art-social">
+              <div class="social-carousel-deck">
+                <div class="social-card-mockup slide-1">
+                  <span class="scm-tag mono">PULSE HEALTH</span>
+                  <h4>5 Signs of Digital Fatigue</h4>
+                  <p class="scm-sub">And how to reset your focus in 10 minutes.</p>
+                  <div class="scm-badge mono">SWIPE ➔</div>
+                </div>
+                <div class="social-card-mockup slide-2">
+                  <span class="scm-tag mono">STEP 02</span>
+                  <div class="scm-stat mono">84%</div>
+                  <p class="scm-desc">Report immediate calm from micro-breaks.</p>
+                </div>
+              </div>
+            </div>
             <div class="case-scan"></div>
             <span class="case-index mono">02</span>
           </a>
           <div class="case-body">
-            <span class="case-category mono">Product UI/UX</span>
-            <h3 class="case-title">Fintra</h3>
-            <p class="case-desc">End-to-end redesign of a banking app — onboarding, spend insights and a component library built for a five-person product squad.</p>
-            <div class="case-tools"><span>Design System</span><span>Prototyping</span></div>
-            <a href="#" class="case-cta"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="case-category mono">02 — Social Media</span>
+            <h3 class="case-title">Pulse Healthcare Campaign</h3>
+            <p class="case-desc">Educational multi-slide carousel and feed system designed to communicate vital healthcare information with clarity and empathy.</p>
+            <div class="case-tools"><span>Social Media</span><span>Infographics</span><span>Content Kit</span></div>
+            <button class="case-cta" data-case-id="pulse"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
 
-        <!-- Afterglow -->
-        <div class="case-card" data-category="video">
-          <a href="#" class="case-media" aria-label="View Afterglow case study">
-            <div class="case-img" style="background:linear-gradient(135deg,#3B1730,#E8862E);"><img class="case-photo" src="https://picsum.photos/seed/afterglow-music-video-17/900/700" alt="Afterglow project reference photo" loading="lazy"></div>
+        <!-- 03: Solstice Coffee (Brand Identity) -->
+        <div class="case-card" data-category="branding">
+          <a href="#" class="case-media" data-case-id="solstice" aria-label="View Solstice Coffee Brand Identity">
+            <div class="case-canvas case-art-branding">
+              <div class="brand-board-mockup">
+                <div class="bb-brand-head">
+                  <span class="bb-logotype">SOLSTICE</span>
+                  <span class="bb-sub mono">SPECIALTY ROASTERS • EST. 2024</span>
+                </div>
+                <div class="bb-palette-row">
+                  <span class="bb-swatch" style="background:#E8862E;"></span>
+                  <span class="bb-swatch" style="background:#2C1C14;"></span>
+                  <span class="bb-swatch" style="background:#D9CEBA;"></span>
+                  <span class="bb-swatch" style="background:#151817;"></span>
+                </div>
+                <div class="bb-bag-preview">
+                  <div class="bb-bag-label">
+                    <span class="bbl-origin mono">ETHIOPIA YIRGACHEFFE</span>
+                    <span class="bbl-notes">Jasmine • Bergamot • Honey</span>
+                    <span class="bbl-wt mono">250G / WHOLE BEAN</span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="case-scan"></div>
             <span class="case-index mono">03</span>
           </a>
           <div class="case-body">
-            <span class="case-category mono">Music Video Edit</span>
-            <h3 class="case-title">Afterglow</h3>
-            <p class="case-desc">Narrative edit and title sequence for an independent artist's music video — teal-and-amber grade, kinetic type inserts, festival selection.</p>
-            <div class="case-tools"><span>Color Grade</span><span>Motion Graphics</span></div>
-            <a href="#" class="case-cta"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="case-category mono">03 — Brand Identity</span>
+            <h3 class="case-title">Solstice Specialty Coffee</h3>
+            <p class="case-desc">Complete brand identity and packaging architecture — custom wordmark, coffee label grid, and retail brand guidelines.</p>
+            <div class="case-tools"><span>Brand Identity</span><span>Typography</span><span>Packaging</span></div>
+            <button class="case-cta" data-case-id="solstice"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
 
-        <!-- Kioske -->
+        <!-- 04: Aether Studio Logomarks (Logo Design) -->
         <div class="case-card" data-category="graphic">
-          <a href="#" class="case-media" aria-label="View Kioske case study">
-            <div class="case-img" style="background:linear-gradient(135deg,#1C1B12,#8A5A2A);"><img class="case-photo" src="https://picsum.photos/seed/kioske-coffee-packaging-63/900/700" alt="Kioske project reference photo" loading="lazy"></div>
+          <a href="#" class="case-media" data-case-id="aether" aria-label="View Aether Studio Logomarks">
+            <div class="case-canvas case-art-logo">
+              <div class="logo-grid-stage">
+                <div class="logo-grid-cell">
+                  <svg viewBox="0 0 48 48" class="logo-svg"><polygon points="24,4 44,38 4,38" fill="none" stroke="#EEEAE2" stroke-width="2.5"/><circle cx="24" cy="26" r="7" fill="none" stroke="#E8862E" stroke-width="2"/></svg>
+                  <span class="mono">TRIAD</span>
+                </div>
+                <div class="logo-grid-cell">
+                  <svg viewBox="0 0 48 48" class="logo-svg"><rect x="8" y="8" width="32" height="32" rx="4" fill="none" stroke="#EEEAE2" stroke-width="2.5"/><circle cx="24" cy="24" r="10" fill="none" stroke="#2FA79B" stroke-width="2"/></svg>
+                  <span class="mono">NEXUS</span>
+                </div>
+                <div class="logo-grid-cell">
+                  <svg viewBox="0 0 48 48" class="logo-svg"><path d="M10 24 C10 12 38 12 38 24 C38 36 10 36 10 24 Z" fill="none" stroke="#EEEAE2" stroke-width="2.5"/><circle cx="24" cy="24" r="4" fill="#E8862E"/></svg>
+                  <span class="mono">INFINITY</span>
+                </div>
+                <div class="logo-grid-cell">
+                  <svg viewBox="0 0 48 48" class="logo-svg"><polygon points="24,4 40,14 40,34 24,44 8,34 8,14" fill="none" stroke="#EEEAE2" stroke-width="2.5"/><path d="M24 14 L24 34 M14 19 L34 29 M34 19 L14 29" stroke="#E8862E" stroke-width="1.8"/></svg>
+                  <span class="mono">HEXA</span>
+                </div>
+              </div>
+            </div>
             <div class="case-scan"></div>
             <span class="case-index mono">04</span>
           </a>
           <div class="case-body">
-            <span class="case-category mono">Packaging</span>
-            <h3 class="case-title">Kioske</h3>
-            <p class="case-desc">Packaging and shelf system for a specialty coffee roastery — a modular label grid that scales from single-origin bags to gift sets.</p>
-            <div class="case-tools"><span>Typography</span><span>Art Direction</span></div>
-            <a href="#" class="case-cta"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="case-category mono">04 — Logo Design</span>
+            <h3 class="case-title">Aether Studio Logomarks</h3>
+            <p class="case-desc">A curated collection of minimalist, geometry-driven logomarks and symbols designed for tech startups and modern ventures.</p>
+            <div class="case-tools"><span>Logo Design</span><span>Symbol Craft</span><span>Vector Grid</span></div>
+            <button class="case-cta" data-case-id="aether"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
 
-        <!-- Wanderlight -->
-        <div class="case-card" data-category="video">
-          <a href="#" class="case-media" aria-label="View Wanderlight case study">
-            <div class="case-img" style="background:linear-gradient(135deg,#123B3A,#E8862E);"><img class="case-photo" src="https://picsum.photos/seed/wanderlight-travel-social-29/900/700" alt="Wanderlight project reference photo" loading="lazy"></div>
+        <!-- 05: Veloce Performance Ad Kit (Ad Creative) -->
+        <div class="case-card" data-category="social">
+          <a href="#" class="case-media" data-case-id="veloce" aria-label="View Veloce Performance Ad Kit">
+            <div class="case-canvas case-art-ads">
+              <div class="ad-creative-stage">
+                <div class="ad-banner-main">
+                  <div class="ad-kicker mono">LIMITED DROP • 48H ONLY</div>
+                  <h4 class="ad-title">ENGINEERED FOR VELOCITY.</h4>
+                  <div class="ad-tag-row">
+                    <span class="ad-sale-pill mono">30% OFF</span>
+                    <span class="ad-cta-pill mono">SHOP NOW ➔</span>
+                  </div>
+                </div>
+                <div class="ad-card-floater">
+                  <span class="mono">HIGH CTR 4.8%</span>
+                </div>
+              </div>
+            </div>
             <div class="case-scan"></div>
             <span class="case-index mono">05</span>
           </a>
           <div class="case-body">
-            <span class="case-category mono">Social Campaign</span>
-            <h3 class="case-title">Wanderlight</h3>
-            <p class="case-desc">A 12-part travel video series edited for vertical feeds — consistent pacing, caption system and a reusable motion template kit.</p>
-            <div class="case-tools"><span>Short-form Edit</span><span>Motion</span></div>
-            <a href="#" class="case-cta"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <span class="case-category mono">05 — Ad Creative</span>
+            <h3 class="case-title">Veloce Performance Ad Kit</h3>
+            <p class="case-desc">High-converting promotional ad kit and dynamic paid social banners designed for high click-through rates across Meta and TikTok.</p>
+            <div class="case-tools"><span>Ad Creative</span><span>Marketing Design</span><span>Paid Social</span></div>
+            <button class="case-cta" data-case-id="veloce"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+
+        <!-- 06: Kinetics Brand Anthem (Video Editing) -->
+        <div class="case-card" data-category="video">
+          <a href="#" class="case-media" data-case-id="kinetics" aria-label="View Kinetics Brand Anthem">
+            <div class="case-canvas case-art-video">
+              <div class="video-monitor-stage">
+                <div class="vm-topbar mono">
+                  <span>REC ● 4K 60FPS</span>
+                  <span class="timecode">00:01:24:18</span>
+                </div>
+                <div class="vm-frame-content">
+                  <div class="vm-kinetic-type">KINETICS</div>
+                  <div class="vm-play-btn">
+                    <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+                  </div>
+                </div>
+                <div class="vm-timeline-track">
+                  <div class="vm-playhead"></div>
+                  <div class="vm-audio-wave">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="case-scan"></div>
+            <span class="case-index mono">06</span>
+          </a>
+          <div class="case-body">
+            <span class="case-category mono">06 — Video Editing</span>
+            <h3 class="case-title">Kinetics Brand Anthem Reel</h3>
+            <p class="case-desc">Paced promotional video edit and kinetic typography sequence for a modern apparel drop — beat-synced cuts and color grading.</p>
+            <div class="case-tools"><span>Video Editing</span><span>Motion Graphics</span><span>Color Grade</span></div>
+            <button class="case-cta" data-case-id="kinetics"><span>View Case Study</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </div>
         </div>
       </div>
@@ -440,14 +762,14 @@
 
     <!-- ============ PROCESS SECTION ============ -->
     <section id="process">
-      <div class="eyebrow">Clip 03 — Process</div>
-      <h2 class="h-title reveal">Five steps,<br>one straight line.</h2>
+      <div class="eyebrow process-eyebrow">CLIP 03 — PROCESS</div>
+      <h2 class="h-title process-title reveal">Five steps,<br>one straight line.</h2>
 
-      <div class="timeline">
+      <div class="timeline" id="processTimeline">
         <div class="timeline-line"><div class="timeline-line-fill" id="timelineFill"></div></div>
         <div class="timeline-steps">
           <div class="timeline-step" data-step="1">
-            <div class="step-node"></div>
+            <div class="step-node"><span class="step-dot"></span></div>
             <div class="step-content">
               <span class="step-num mono">01</span>
               <svg class="step-icon" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg>
@@ -457,7 +779,7 @@
           </div>
 
           <div class="timeline-step" data-step="2">
-            <div class="step-node"></div>
+            <div class="step-node"><span class="step-dot"></span></div>
             <div class="step-content">
               <span class="step-num mono">02</span>
               <svg class="step-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M9 10v10"/></svg>
@@ -467,7 +789,7 @@
           </div>
 
           <div class="timeline-step" data-step="3">
-            <div class="step-node"></div>
+            <div class="step-node"><span class="step-dot"></span></div>
             <div class="step-content">
               <span class="step-num mono">03</span>
               <svg class="step-icon" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5Z"/><path d="M3 13l9 5 9-5"/></svg>
@@ -477,7 +799,7 @@
           </div>
 
           <div class="timeline-step" data-step="4">
-            <div class="step-node"></div>
+            <div class="step-node"><span class="step-dot"></span></div>
             <div class="step-content">
               <span class="step-num mono">04</span>
               <svg class="step-icon" viewBox="0 0 24 24"><path d="M5 3l6 15 2-6 6-2-14-7Z"/></svg>
@@ -487,7 +809,7 @@
           </div>
 
           <div class="timeline-step" data-step="5">
-            <div class="step-node"></div>
+            <div class="step-node"><span class="step-dot"></span></div>
             <div class="step-content">
               <span class="step-num mono">05</span>
               <svg class="step-icon" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M4 9l8-5 8 5"/></svg>
@@ -501,68 +823,127 @@
 
     <!-- ============ REEL SECTION ============ -->
     <section id="reel">
-      <div class="eyebrow">Clip 04 — Motion Study</div>
-      <h2 class="h-title reveal">Built in the<br>browser, live.</h2>
-      <div class="reel-player reveal">
-        <div class="reel-canvas-wrap"><canvas id="reelCanvas"></canvas></div>
-        <div class="reel-chrome">
-          <div class="reel-btn" id="reelToggle" aria-label="Toggle motion reel animation">
-            <svg id="reelIcon" viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg>
+      <div class="eyebrow">CLIP 04 — MOTION &amp; VIDEO</div>
+      <h2 class="h-title reveal">Motion that gives<br>interfaces life.</h2>
+      <p class="reel-intro reveal">Short-form pacing, product teasers, UI motion systems and cinematic storytelling — video crafted to hold attention and elevate brand presence.</p>
+
+      <div class="reel-theater-wrap reveal">
+        <div class="reel-theater" id="reelTheater">
+          <video id="mainReelVideo" class="main-reel-video" playsinline muted preload="metadata" poster="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&auto=format&fit=crop&q=80">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+          </video>
+          <div class="reel-video-overlay" id="reelVideoOverlay">
+            <div class="reel-overlay-top">
+              <span class="reel-badge mono" id="reelActiveCategory">01 — SOCIAL MEDIA REEL</span>
+              <span class="reel-duration-tag mono" id="reelActiveDuration">00:15</span>
+            </div>
+            <button class="reel-big-play" id="reelBigPlay" aria-label="Play video">
+              <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+            </button>
+            <div class="reel-overlay-bottom">
+              <h3 class="reel-active-title" id="reelActiveTitle">Short-Form Campaign Edit</h3>
+            </div>
           </div>
-          <span id="reelTC">00:00:00:00</span>
-          <div class="reel-bar"><div class="reel-bar-fill" id="reelBarFill"></div></div>
-          <span>LOOP</span>
+          <div class="reel-chrome">
+            <button class="reel-ctl-btn" id="reelPlayBtn" aria-label="Play or pause video">
+              <svg id="reelPlayIcon" viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+            </button>
+            <span id="reelTimecode" class="mono">00:00 / 00:15</span>
+            <div class="reel-scrubber" id="reelScrubber" role="slider" aria-label="Video scrubber" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+              <div class="reel-scrubber-track">
+                <div class="reel-scrubber-fill" id="reelScrubberFill"></div>
+                <div class="reel-scrubber-handle" id="reelScrubberHandle"></div>
+              </div>
+            </div>
+            <button class="reel-ctl-btn" id="reelMuteBtn" aria-label="Toggle sound">
+              <svg id="reelMuteIcon" viewBox="0 0 24 24"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+            </button>
+            <button class="reel-ctl-btn" id="reelFullscreenBtn" aria-label="Toggle fullscreen">
+              <svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="reel-active-meta">
+          <p class="reel-active-desc" id="reelActiveDesc">Dynamic vertical & feed pacing, kinetic captions, rhythm-synced transitions, and hook-driven storytelling built for modern social feeds.</p>
+          <div class="reel-tags" id="reelActiveTags">
+            <span>Short-Form</span>
+            <span>Kinetic Typography</span>
+            <span>Beat Sync</span>
+          </div>
         </div>
       </div>
-      <p class="reel-note">A generative motion study rendered in real time on canvas — a small proof that the same eye for timing and color carries from the edit suite into the browser.</p>
 
-      <div class="video-grid">
-        <div class="video-card reveal">
-          <div class="video-thumb">
-            <div class="video-art" style="background-image:radial-gradient(circle at 30% 30%, #E8862E, transparent 55%), radial-gradient(circle at 75% 70%, #2FA79B, transparent 55%), radial-gradient(circle at 50% 90%, #C77DFF, transparent 50%);"></div>
-            <div class="video-scan"></div>
-            <div class="video-vignette"></div>
-            <span class="video-category mono">Music Video</span>
-            <div class="video-play"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></div>
-            <span class="video-duration mono">02:14</span>
+      <!-- 5-Work-Type Playlist Selector -->
+      <div class="reel-playlist" id="reelPlaylist">
+        <!-- 01: Social Media Reel -->
+        <div class="playlist-item is-active" data-index="0" role="button" tabindex="0">
+          <div class="pi-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&auto=format&fit=crop&q=80" alt="Social Media Reel poster" class="pi-thumb" loading="lazy">
+            <div class="pi-play-indicator"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+            <span class="pi-duration mono">00:15</span>
           </div>
-          <div class="video-title">Afterglow</div>
+          <div class="pi-body">
+            <span class="pi-cat mono">01 — SOCIAL REEL</span>
+            <h4 class="pi-title">Short-Form Campaign Edit</h4>
+            <span class="pi-hint">Short-form pacing &amp; transitions</span>
+          </div>
         </div>
 
-        <div class="video-card reveal">
-          <div class="video-thumb">
-            <div class="video-art" style="background-image:radial-gradient(circle at 25% 25%, #2FA79B, transparent 55%), radial-gradient(circle at 75% 75%, #E8862E, transparent 55%);"></div>
-            <div class="video-scan"></div>
-            <div class="video-vignette"></div>
-            <span class="video-category mono">Social Reel</span>
-            <div class="video-play"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></div>
-            <span class="video-duration mono">00:45</span>
+        <!-- 02: Product / Brand Video -->
+        <div class="playlist-item" data-index="1" role="button" tabindex="0">
+          <div class="pi-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&auto=format&fit=crop&q=80" alt="Product Brand Video poster" class="pi-thumb" loading="lazy">
+            <div class="pi-play-indicator"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+            <span class="pi-duration mono">00:15</span>
           </div>
-          <div class="video-title">Wanderlight</div>
+          <div class="pi-body">
+            <span class="pi-cat mono">02 — PRODUCT / BRAND</span>
+            <h4 class="pi-title">Commercial Showcase</h4>
+            <span class="pi-hint">Product hierarchy &amp; branding</span>
+          </div>
         </div>
 
-        <div class="video-card reveal">
-          <div class="video-thumb">
-            <div class="video-art" style="background-image:radial-gradient(circle at 60% 35%, #D9A15C, transparent 55%), radial-gradient(circle at 20% 75%, #123B3A, transparent 55%);"></div>
-            <div class="video-scan"></div>
-            <div class="video-vignette"></div>
-            <span class="video-category mono">Brand Film</span>
-            <div class="video-play"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></div>
-            <span class="video-duration mono">01:20</span>
+        <!-- 03: Motion Design -->
+        <div class="playlist-item" data-index="2" role="button" tabindex="0">
+          <div class="pi-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400&auto=format&fit=crop&q=80" alt="Motion Design poster" class="pi-thumb" loading="lazy">
+            <div class="pi-play-indicator"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+            <span class="pi-duration mono">00:15</span>
           </div>
-          <div class="video-title">Nightframe</div>
+          <div class="pi-body">
+            <span class="pi-cat mono">03 — MOTION DESIGN</span>
+            <h4 class="pi-title">UI Motion &amp; Kinetic Systems</h4>
+            <span class="pi-hint">Typography &amp; UI choreography</span>
+          </div>
         </div>
 
-        <div class="video-card reveal">
-          <div class="video-thumb">
-            <div class="video-art" style="background-image:radial-gradient(circle at 70% 30%, #C77DFF, transparent 55%), radial-gradient(circle at 30% 70%, #2FA79B, transparent 55%);"></div>
-            <div class="video-scan"></div>
-            <div class="video-vignette"></div>
-            <span class="video-category mono">Color Grade Reel</span>
-            <div class="video-play"><svg viewBox="0 0 10 12"><polygon points="0,0 10,6 0,12"/></svg></div>
-            <span class="video-duration mono">00:52</span>
+        <!-- 04: Cinematic Edit -->
+        <div class="playlist-item" data-index="3" role="button" tabindex="0">
+          <div class="pi-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400&auto=format&fit=crop&q=80" alt="Cinematic Edit poster" class="pi-thumb" loading="lazy">
+            <div class="pi-play-indicator"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+            <span class="pi-duration mono">00:15</span>
           </div>
-          <div class="video-title">Pulse Grade</div>
+          <div class="pi-body">
+            <span class="pi-cat mono">04 — CINEMATIC EDIT</span>
+            <h4 class="pi-title">Atmospheric Narrative</h4>
+            <span class="pi-hint">Color grading &amp; sound sync</span>
+          </div>
+        </div>
+
+        <!-- 05: Client / Campaign Reel -->
+        <div class="playlist-item" data-index="4" role="button" tabindex="0">
+          <div class="pi-thumb-wrap">
+            <img src="https://images.unsplash.com/photo-1518173946687-a4c8a383392e?w=400&auto=format&fit=crop&q=80" alt="Campaign Reel poster" class="pi-thumb" loading="lazy">
+            <div class="pi-play-indicator"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
+            <span class="pi-duration mono">01:00</span>
+          </div>
+          <div class="pi-body">
+            <span class="pi-cat mono">05 — CLIENT CAMPAIGN</span>
+            <h4 class="pi-title">Brand Anthem &amp; Drop</h4>
+            <span class="pi-hint">Full campaign deliverables</span>
+          </div>
         </div>
       </div>
     </section>
@@ -570,37 +951,124 @@
     <!-- ============ CONTACT SECTION ============ -->
     <section id="contact">
       <div class="contact-inner">
-        <div class="availability-badge reveal"><span class="dot"></span>Available for Projects — 2026</div>
+        <!-- Live Availability Indicator -->
+        <div class="availability-badge contact-avail reveal">
+          <span class="live-pulse-dot"></span>
+          <span>AVAILABLE FOR PROJECTS — 2026</span>
+        </div>
 
-        <h2 class="h-title reveal">Let's build something<br>worth signing.</h2>
-        <p class="contact-sub reveal">Have a project in mind? Tell me about it — I read every message and reply within 24 hours.</p>
+        <!-- Hero CTA Heading -->
+        <h2 class="h-title contact-hero-title reveal">
+          Let's build<br>something<br><span class="accent-signing">worth signing.</span>
+        </h2>
 
+        <p class="contact-sub reveal">
+          Have a project in mind? Tell me about it — I read every message and reply within 24 hours.
+        </p>
+
+        <!-- Large Interactive Email Element -->
+        <div class="contact-email-card reveal" id="contactEmailCard" role="button" tabindex="0" aria-label="Copy email address ismailkhan04463@gmail.com">
+          <span class="contact-email-addr mono" id="contactEmailText">ismailkhan04463@gmail.com</span>
+          <button class="contact-copy-pill mono" id="contactCopyBtn" aria-label="Copy email address">
+            <span class="copy-icon">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <span class="copy-label" id="contactCopyLabel">COPY EMAIL</span>
+          </button>
+        </div>
+
+        <!-- Contact Actions: Primary Mailto + Resume Download -->
         <div class="contact-actions reveal">
-          <a href="mailto:hello@ismailkhan.design" class="btn-primary">
-            <span>Email Me</span>
+          <a href="mailto:ismailkhan04463@gmail.com" class="btn-primary contact-main-btn" aria-label="Send email to Ismail Khan">
+            <span>EMAIL ME</span>
             <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a href="#" class="btn-ghost" download>
+          <a href="#" class="btn-ghost contact-resume-btn" download aria-label="Download Resume">
             <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 19h16"/></svg>
-            <span>Download Resume</span>
+            <span>DOWNLOAD RESUME</span>
           </a>
         </div>
 
+        <!-- Social Links with Arrow ↗ -->
         <div class="contact-socials reveal">
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="#" target="_blank" rel="noopener">Behance</a>
-          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LINKEDIN <span class="arr">↗</span></a>
+          <a href="https://behance.net" target="_blank" rel="noopener">BEHANCE <span class="arr">↗</span></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener">INSTAGRAM <span class="arr">↗</span></a>
+        </div>
+
+        <!-- Signature Sign-Off Callback -->
+        <div class="contact-signoff-wrap reveal" id="contactSignoff">
+          <div class="contact-sig-container">
+            <svg class="contact-sig-svg" viewBox="0 0 1000 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="contactSigStrokes">
+                <!-- Capital I -->
+                <path class="contact-sig-stroke" d="M120,360 C105,325 110,240 165,190 C195,165 212,190 200,225 C180,290 195,430 240,515 C252,538 238,565 208,560 C175,555 160,520 185,495" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- s-m-a-i-l -->
+                <path class="contact-sig-stroke" d="M268,495 C272,470 282,445 290,435 C298,445 305,465 298,480 C292,490 278,495 282,492 C288,490 300,480 312,460 C318,440 324,425 332,425 C340,425 336,455 340,470 C346,445 352,410 360,410 C368,410 364,440 368,455 C374,430 380,395 388,395 C396,395 392,425 396,440 C402,445 412,435 424,415 C432,400 440,388 450,388 C425,405 435,430 454,386 C455,405 452,425 456,432 C462,435 470,422 478,395 C482,385 486,375 488,375 C490,388 488,410 492,416 C498,420 506,405 514,365 C520,300 510,175 512,150 C512,142 520,142 522,155 C528,210 526,330 528,380 C532,390 542,382 552,360" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- i Dot -->
+                <path class="contact-sig-stroke" d="M484,320 C486,326 488,332 490,336" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Khan -->
+                <path class="contact-sig-stroke" d="M505,200 C522,175 542,108 552,98 C560,90 558,115 556,170 C554,230 558,280 564,305 M600,125 C580,168 560,205 555,212 C562,218 590,260 605,290 C612,250 600,140 595,85 C595,75 604,75 608,95 C615,145 618,220 624,268 C628,245 640,195 658,195 C672,195 670,230 675,255 C684,208 702,190 714,205 C698,225 685,248 700,252 C714,256 726,220 730,195 C732,230 736,245 745,215 C748,185 760,185 768,208 C772,220 778,212 785,195" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Main Underline -->
+                <path class="contact-sig-stroke" d="M295,520 C465,445 680,335 940,210 C955,202 965,202 960,210" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Secondary Underline -->
+                <path class="contact-sig-stroke" d="M345,538 C470,475 605,400 735,335" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Smiley Eyes & Smile -->
+                <path class="contact-sig-stroke" d="M696,368 L698,374" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="contact-sig-stroke" d="M718,358 L720,364" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path class="contact-sig-stroke" d="M700,390 C708,408 726,402 730,382" stroke="#F5F2EC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            <span class="contact-sig-label mono">Ismail Khan — Handcrafted &amp; Signed</span>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer>
+      <span>© 2026 ISMAIL KHAN — ALL RIGHTS RESERVED</span>
+      <span>DESIGNED &amp; DEVELOPED FRAME BY FRAME - ISMAIL KHAN</span>
+    </footer>
+
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <span>© 2026 ISMAIL KHAN — ALL RIGHTS RESERVED</span>
-    <span>DESIGNED &amp; DEVELOPED FRAME BY FRAME — FIN.</span>
-  </footer>
+  <!-- ============ PROJECT CASE STUDY MODAL VIEWER ============ -->
+  <div id="caseStudyViewer" class="case-study-viewer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Case Study Viewer">
+    <div class="csv-backdrop"></div>
+    <div class="csv-dialog">
+      <!-- Modal Top Navigation Bar -->
+      <header class="csv-topbar">
+        <div class="csv-topbar-left">
+          <span class="csv-badge mono">CASE STUDY</span>
+          <span class="csv-hint mono">ESC TO CLOSE • ← → TO NAVIGATE</span>
+        </div>
+        <button id="csvCloseBtn" class="csv-close-btn mono" aria-label="Close Case Study Viewer">
+          <span>CLOSE</span>
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </header>
+
+      <!-- Scrollable Case Study Body -->
+      <div class="csv-scroll-wrapper">
+        <div class="csv-body" id="csvBody">
+          <!-- Dynamic Content rendered by case-study-viewer.js -->
+        </div>
+
+        <!-- Next / Prev Project Navigation Footer -->
+        <footer class="csv-bottom-nav">
+          <button id="csvPrevBtn" class="csv-nav-card prev" aria-label="Previous Case Study">
+            <span class="csv-nav-dir mono">← PREVIOUS CASE STUDY</span>
+            <span class="csv-nav-sub">Previous Project</span>
+          </button>
+          <button id="csvNextBtn" class="csv-nav-card next" aria-label="Next Case Study">
+            <span class="csv-nav-dir mono">NEXT CASE STUDY →</span>
+            <span class="csv-nav-sub">Next Project</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+  </div>
 
   <!-- External GSAP Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -614,5 +1082,7 @@
   <script src="js/reel-canvas.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/signature.js"></script>
+  <script src="js/case-studies-data.js"></script>
+  <script src="js/case-study-viewer.js"></script>
 </body>
 </html>
