@@ -525,67 +525,206 @@ h1.hero-name .line {
 /* Tablet adjustments */
 @media (max-width: 1100px) and (min-width: 769px) {
   .hero-float-stats {
-    left: 0;
-    transform: scale(.88);
-    transform-origin: left center;
+    left: 10px;
+    top: 15%;
   }
   .hero-float-traits {
-    right: 0;
-    transform: scale(.88);
-    transform-origin: right center;
+    right: 10px;
+    bottom: 15%;
   }
 }
 
-/* Mobile vertical flow */
+/* Mobile & Small Screen Vertical Hierarchy */
 @media (max-width: 768px) {
   #hero {
-    padding-top: 80px;
-    padding-bottom: 40px;
+    padding-top: clamp(80px, 10vh, 100px);
+    padding-bottom: 50px;
     min-height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+  .hero-frame {
+    padding: 0;
+    max-width: 100%;
+  }
+  .hero-topline {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 0 8px;
+  }
+  .hero-kicker {
+    margin-bottom: 10px;
+    font-size: .58rem;
+    padding: 5px 12px;
+  }
+  .hero-super {
+    max-width: 100%;
+    font-size: .8rem;
+    line-height: 1.5;
+  }
+  .hero-title-ui {
+    font-size: clamp(.92rem, 3.8vw, 1.12rem);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .hero-super em {
+    font-size: clamp(.84rem, 3.4vw, .96rem);
+    display: block;
+    line-height: 1.4;
+  }
+  .hero-subtext {
+    font-size: clamp(.72rem, 3vw, .8rem);
+    display: block;
+    margin-top: 6px;
+    line-height: 1.5;
   }
   .hero-anchor {
     flex-direction: column;
     align-items: center;
-    gap: 0;
+    width: 100%;
+    margin-top: 6px;
+    position: relative;
+  }
+  .hero-portrait-aura {
+    width: 260px;
+    height: 260px;
+    filter: blur(36px);
+    top: 24%;
   }
   .hero-portrait {
     order: 1;
-    height: min(48vh, 380px);
+    position: relative;
+    z-index: 2;
+    height: clamp(230px, 32vh, 310px);
+    width: auto;
+    margin: 0 auto;
+  }
+  .hero-portrait .art {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 80%, rgba(0,0,0,.2) 92%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 80%, rgba(0,0,0,.2) 92%, transparent 100%);
   }
   .hero-overlay {
     order: 2;
     position: static;
     transform: none;
-    margin-top: -30px;
+    margin-top: 10px;
     width: 100%;
     max-width: 440px;
-    padding: 0 12px;
+    padding: 0 8px;
+    z-index: 3;
+  }
+  h1.hero-name {
+    font-size: clamp(2.2rem, 9.2vw, 3.4rem);
+    line-height: .94;
+    letter-spacing: -.02em;
+    margin-bottom: 8px;
+  }
+  .hero-roles {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: .72rem;
+    width: 100%;
+  }
+  .hero-roles > span {
+    font-size: .6rem;
+    letter-spacing: .14em;
+    color: var(--muted-2);
+  }
+  .hero-roles .role-window {
+    min-width: unset;
+    width: 100%;
+    height: 1.4em;
+    text-align: center;
+    color: var(--amber);
+    font-weight: 600;
+    font-size: clamp(.74rem, 3.4vw, .86rem);
+    letter-spacing: .08em;
+  }
+  .hero-roles .role-window .role {
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .hero-cta {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 10px;
+  }
+  .hero-cta .btn-primary,
+  .hero-cta .btn-ghost {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 20px;
+    font-size: .75rem;
+    letter-spacing: .08em;
+  }
+  .hero-copy-email {
+    margin: 14px auto 0;
+    width: max-content;
+    max-width: 100%;
+    padding: 7px 12px;
+    font-size: clamp(.64rem, 2.9vw, .74rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
   }
   .hero-float-stats {
     order: 3;
     position: static;
-    margin: 20px auto 0;
+    margin: 24px auto 0;
     width: 100%;
-    max-width: 320px;
-    flex-direction: row;
-    justify-content: center;
+    max-width: 340px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    padding: 0 6px;
   }
   .hero-float-stats .float-card {
-    flex: 1;
     min-width: 0;
+    padding: 12px 14px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+  .float-card .num {
+    font-size: clamp(1.15rem, 4.4vw, 1.35rem);
+  }
+  .float-card .lbl {
+    font-size: .58rem;
+    letter-spacing: .06em;
   }
   .hero-float-traits {
     order: 4;
     position: static;
     margin: 12px auto 0;
     width: 100%;
-    max-width: 320px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    max-width: 340px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
     gap: 8px;
-    padding: 10px 14px;
+  }
+  .hero-float-traits .trait-row {
+    font-size: .7rem;
+    letter-spacing: .06em;
+  }
+  .hero-scrollcue {
+    display: none;
   }
 }
 
@@ -958,25 +1097,18 @@ h1.hero-name .line {
 .tool-node[data-tool="davinci"] { animation: toolIdle2 6.2s ease-in-out 0.2s infinite; }
 .tool-node[data-tool="capcut"] { animation: toolIdle3 7.5s ease-in-out 1.5s infinite; }
 
-/* Responsive Behavior */
-@media (max-width: 900px) and (min-width: 681px) {
-  .tools-ecosystem {
-    height: 440px;
-    min-height: 400px;
-  }
-}
-
-@media (max-width: 680px) {
+/* Responsive Behavior for Tools Ecosystem */
+@media (max-width: 900px) {
   .tools-ecosystem {
     height: auto;
     min-height: unset;
-    padding: 24px 16px;
+    padding: 24px 18px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    background: rgba(18, 20, 24, 0.6);
+    border: 1px solid rgba(238, 234, 226, 0.08);
+    box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.3);
     overflow: visible;
   }
   .tools-filaments,
@@ -987,16 +1119,36 @@ h1.hero-name .line {
     position: static;
     transform: none !important;
     animation: none !important;
+    width: 100%;
   }
   .tool-node-inner {
     width: 100%;
-    padding: 10px 12px;
-  }
-  .tool-anchor .tool-node-inner {
-    padding: 10px 12px;
+    padding: 12px 14px;
+    background: rgba(22, 25, 30, 0.7);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: none !important;
   }
   .tool-anchor {
     grid-column: span 2;
+  }
+  .tool-anchor .tool-node-inner {
+    padding: 14px 16px;
+    background: rgba(28, 30, 36, 0.85);
+    border-color: rgba(232, 134, 46, 0.25);
+  }
+}
+
+@media (max-width: 420px) {
+  .tools-ecosystem {
+    grid-template-columns: 1fr;
+    padding: 16px 12px;
+    gap: 10px;
+  }
+  .tool-anchor {
+    grid-column: span 1;
   }
 }
 
@@ -1498,6 +1650,10 @@ h1.hero-name .line {
 
 .ftx-amt {
   font-size: .74rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: right;
+  margin-left: 6px;
 }
 
 .ftx-amt.neg { color: var(--paper); }
@@ -3419,12 +3575,54 @@ body.modal-scroll-lock {
   margin-bottom: clamp(40px, 6vw, 60px);
 }
 
+.csv-badges-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
 .csv-hero-badge {
   display: inline-block;
   font-size: .64rem;
   letter-spacing: .14em;
   color: var(--amber);
-  margin-bottom: 12px;
+}
+
+.csv-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: .54rem;
+  letter-spacing: .14em;
+  padding: 3px 9px;
+  border-radius: 100px;
+  border: 1px solid rgba(232, 134, 46, .35);
+  background: rgba(232, 134, 46, .1);
+  color: var(--amber);
+  text-transform: uppercase;
+}
+
+.case-category-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.case-status-tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: .52rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid rgba(232, 134, 46, .3);
+  background: rgba(232, 134, 46, .08);
+  padding: 2px 7px;
+  border-radius: 100px;
 }
 
 .csv-hero-title {

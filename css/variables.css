@@ -17,3 +17,9 @@
   --font-mono: 'JetBrains Mono', monospace;
   --rail-w: 64px;
 }
+
+@media (max-width: 900px) {
+  :root {
+    --rail-w: 0px;
+  }
+}

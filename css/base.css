@@ -22,6 +22,11 @@ body {
   cursor: none;
 }
 
+/* Prevent scroll when mobile nav drawer is open */
+body.mobile-nav-open {
+  overflow: hidden;
+}
+
 ::selection {
   background: var(--amber);
   color: var(--bg);

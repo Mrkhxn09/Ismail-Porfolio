@@ -1,7 +1,7 @@
 /**
- * Interactions & Scroll Triggers Module
+ * Ismail Khan Portfolio — Interactions & Scroll Triggers Module
  * Manages hero entrance sequencing, parallax, role rotation, clipboard copying,
- * work category filtering, and scroll-triggered animations.
+ * work category filtering, floating tools ecosystem, and scroll-triggered animations.
  */
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -60,7 +60,7 @@ window.heroIntro = function heroIntro() {
 };
 
 /* ---------- Hero scroll parallax ---------- */
-if (!reduceMotion) {
+if (!reduceMotion && typeof ScrollTrigger !== 'undefined') {
   ScrollTrigger.create({
     trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1,
     onUpdate: (self) => {
@@ -106,7 +106,7 @@ if (!reduceMotion) {
 
 /* ---------- Role ticker (hero) ---------- */
 (function initRoleTicker() {
-  const roles = ['UI / UX DESIGNER', 'GRAPHIC DESIGNER', 'MOTION DESIGNER'];
+  const roles = ['UI / UX DESIGNER', 'GRAPHIC DESIGNER', 'BRAND IDENTITY', 'SOCIAL MEDIA DESIGN'];
   const roleWindow = document.getElementById('roleWindow');
   if (!roleWindow) return;
 
@@ -124,6 +124,7 @@ if (!reduceMotion) {
   if (!reduceMotion) {
     setInterval(() => {
       const items = roleWindow.querySelectorAll('.role');
+      if (!items.length) return;
       const next = (roleIdx + 1) % roles.length;
       gsap.to(items[roleIdx], { opacity: 0, y: -6, duration: .9, ease: 'power2.inOut' });
       gsap.fromTo(items[next], { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: .9, ease: 'power2.inOut' });
@@ -187,62 +188,63 @@ if (!reduceMotion) {
 })();
 
 /* ---------- Reveal on scroll ---------- */
-gsap.utils.toArray('.reveal:not(.service-card)').forEach((el) => {
-  gsap.fromTo(el, { opacity: 0, y: 22 }, {
-    opacity: 1, y: 0, duration: .8, ease: 'power3.out',
-    scrollTrigger: { trigger: el, start: 'top 85%' }
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+  gsap.utils.toArray('.reveal:not(.service-card)').forEach((el) => {
+    gsap.fromTo(el, { opacity: 0, y: 22 }, {
+      opacity: 1, y: 0, duration: .8, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 85%' }
+    });
   });
-});
 
-/* ---------- Discipline cards stagger reveal ---------- */
-const serviceGrid = document.querySelector('.service-grid');
-if (serviceGrid) {
-  gsap.fromTo(serviceGrid.querySelectorAll('.service-card'),
-    { opacity: 0, y: 26 },
-    {
-      opacity: 1, y: 0, duration: 0.75, stagger: 0.1, ease: 'power3.out',
-      scrollTrigger: { trigger: serviceGrid, start: 'top 85%' }
-    }
-  );
-}
-
-/* ---------- Case study card wipe reveal & internal canvas parallax ---------- */
-gsap.utils.toArray('.case-media').forEach((fr) => {
-  gsap.fromTo(fr, { clipPath: 'inset(0 0 0 100% round 16px)' }, {
-    clipPath: 'inset(0 0 0 0% round 16px)', duration: 1.1, ease: 'power4.inOut',
-    scrollTrigger: { trigger: fr, start: 'top 82%' }
-  });
-});
-
-gsap.utils.toArray('.case-body').forEach((m) => {
-  gsap.fromTo(m, { opacity: 0, y: 20 }, {
-    opacity: 1, y: 0, duration: .9, ease: 'power3.out',
-    scrollTrigger: { trigger: m, start: 'top 85%' }
-  });
-});
-
-/* Internal Canvas Scroll Parallax on Case Cards */
-if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
-  gsap.utils.toArray('.case-card').forEach((card, i) => {
-    const canvas = card.querySelector('.case-canvas');
-    if (!canvas) return;
-    const speed = i % 2 === 0 ? 10 : 7;
-    gsap.fromTo(canvas,
-      { y: -speed },
+  /* ---------- Discipline cards stagger reveal ---------- */
+  const serviceGrid = document.querySelector('.service-grid');
+  if (serviceGrid) {
+    gsap.fromTo(serviceGrid.querySelectorAll('.service-card'),
+      { opacity: 0, y: 26 },
       {
-        y: speed,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: card,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1.2
-        }
+        opacity: 1, y: 0, duration: 0.75, stagger: 0.1, ease: 'power3.out',
+        scrollTrigger: { trigger: serviceGrid, start: 'top 85%' }
       }
     );
-  });
-}
+  }
 
+  /* ---------- Case study card wipe reveal ---------- */
+  gsap.utils.toArray('.case-media').forEach((fr) => {
+    gsap.fromTo(fr, { clipPath: 'inset(0 0 0 100% round 16px)' }, {
+      clipPath: 'inset(0 0 0 0% round 16px)', duration: 1.1, ease: 'power4.inOut',
+      scrollTrigger: { trigger: fr, start: 'top 82%' }
+    });
+  });
+
+  gsap.utils.toArray('.case-body').forEach((m) => {
+    gsap.fromTo(m, { opacity: 0, y: 20 }, {
+      opacity: 1, y: 0, duration: .9, ease: 'power3.out',
+      scrollTrigger: { trigger: m, start: 'top 85%' }
+    });
+  });
+
+  /* Internal Canvas Scroll Parallax on Case Cards */
+  if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
+    gsap.utils.toArray('.case-card').forEach((card, i) => {
+      const canvas = card.querySelector('.case-canvas');
+      if (!canvas) return;
+      const speed = i % 2 === 0 ? 10 : 7;
+      gsap.fromTo(canvas,
+        { y: -speed },
+        {
+          y: speed,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.2
+          }
+        }
+      );
+    });
+  }
+}
 
 /* ---------- Floating Tool Ecosystem: Scrub Scroll Story & Parallax ---------- */
 (function initToolsEcosystem() {
@@ -262,7 +264,7 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
     });
   });
 
-  if (reduceMotion || window.matchMedia('(max-width: 680px)').matches) return;
+  if (reduceMotion || window.innerWidth <= 900) return;
 
   const nodeMap = {};
   nodes.forEach((n) => {
@@ -288,14 +290,11 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
   if (nodeMap.illustrator) {
     tl.fromTo(nodeMap.illustrator, { x: -80, y: 10, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.38 }, 0.04);
   }
+  if (nodeMap.photoshop) {
+    tl.fromTo(nodeMap.photoshop, { x: 75, y: 55, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.4 }, 0.06);
+  }
   if (nodeMap.canva) {
     tl.fromTo(nodeMap.canva, { x: -50, y: 65, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.42 }, 0.08);
-  }
-  if (nodeMap.davinci) {
-    tl.fromTo(nodeMap.davinci, { x: 75, y: 55, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.4 }, 0.06);
-  }
-  if (nodeMap.capcut) {
-    tl.fromTo(nodeMap.capcut, { x: -10, y: -65, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.38 }, 0.07);
   }
   if (filaments) {
     tl.fromTo(filaments, { opacity: 0 }, { opacity: 0.75, duration: 0.3 }, 0.2);
@@ -311,14 +310,11 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
   if (nodeMap.illustrator) {
     tl.to(nodeMap.illustrator, { x: -35, y: -20, opacity: 0.4, duration: 0.35 }, 0.65);
   }
+  if (nodeMap.photoshop) {
+    tl.to(nodeMap.photoshop, { x: 35, y: 35, opacity: 0.35, duration: 0.35 }, 0.65);
+  }
   if (nodeMap.canva) {
     tl.to(nodeMap.canva, { x: -25, y: 40, opacity: 0.3, duration: 0.35 }, 0.65);
-  }
-  if (nodeMap.davinci) {
-    tl.to(nodeMap.davinci, { x: 35, y: 35, opacity: 0.35, duration: 0.35 }, 0.65);
-  }
-  if (nodeMap.capcut) {
-    tl.to(nodeMap.capcut, { x: -15, y: -45, opacity: 0.3, duration: 0.35 }, 0.65);
   }
   if (filaments) {
     tl.to(filaments, { opacity: 0.15, duration: 0.35 }, 0.65);
@@ -327,6 +323,7 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
   // Desktop Mouse Parallax within Ecosystem
   let mx = 0, my = 0, cx = 0, cy = 0, rafId = null;
   eco.addEventListener('mousemove', (e) => {
+    if (window.innerWidth <= 900) return;
     const rect = eco.getBoundingClientRect();
     mx = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
     my = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
@@ -419,7 +416,6 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
 })();
 
 /* ---------- Process timeline scroll fill ---------- */
-/* ---------- Process timeline scrub & sequential milestone activation ---------- */
 (function initProcessTimeline() {
   const processSec = document.getElementById('process');
   const timeline = document.getElementById('processTimeline');
@@ -437,11 +433,11 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
   }
 
   // Thresholds across the 5 milestones:
-  // Step 1: Research (0.06)
-  // Step 2: Wireframe (0.28)
-  // Step 3: UI Design (0.50)
-  // Step 4: Prototype (0.72)
-  // Step 5: Handoff (0.90)
+  // Step 1: Understand (0.06)
+  // Step 2: Explore (0.28)
+  // Step 3: Design (0.50)
+  // Step 4: Refine (0.72)
+  // Step 5: Deliver (0.90)
   const thresholds = [0.06, 0.28, 0.50, 0.72, 0.90];
 
   ScrollTrigger.create({
@@ -459,7 +455,6 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
         fill.style.height = '100%';
       }
 
-      // Activate milestones sequentially as the scrub line reaches each node
       steps.forEach((step, i) => {
         const threshold = thresholds[i];
         if (p >= threshold) {
@@ -609,4 +604,3 @@ if (!reduceMotion && !window.matchMedia('(pointer: coarse)').matches) {
     }
   });
 })();
-
