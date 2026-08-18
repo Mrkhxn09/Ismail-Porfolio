@@ -8,15 +8,29 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 /* ---------- Hero Entrance Animation ---------- */
 window.heroIntro = function heroIntro() {
-  gsap.set('header.nav', { opacity: 0 });
+  const isMobile = window.innerWidth <= 900;
+
+  // On mobile, topbar must ALWAYS stay visible and interactive
+  if (isMobile) {
+    gsap.set('header.nav', { opacity: 1, y: 0, pointerEvents: 'auto' });
+  } else {
+    gsap.set('header.nav', { opacity: 0 });
+  }
+
   gsap.set('.hero-kicker', { opacity: 0, y: 10 });
   gsap.set('.hero-super', { opacity: 0, y: 12 });
   gsap.set('.hero-bgname', { opacity: 0 });
   gsap.set('.hero-portrait-aura', { opacity: 0, scale: 0.88 });
   gsap.set('.hero-portrait', { opacity: 0, y: 16 });
   gsap.set('.hero-roles, .hero-cta, .hero-copy-email, .hero-scrollcue', { opacity: 0, y: 12 });
-  gsap.set('.float-card', { opacity: 0, x: -20 });
-  gsap.set('.hero-float-traits', { opacity: 0, x: 20 });
+
+  if (!isMobile) {
+    gsap.set('.float-card', { opacity: 0, x: -20 });
+    gsap.set('.hero-float-traits', { opacity: 0, x: 20 });
+  } else {
+    gsap.set('.float-card', { opacity: 0, y: 16 });
+    gsap.set('.hero-float-traits', { opacity: 0, y: 16 });
+  }
 
   const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
@@ -35,11 +49,13 @@ window.heroIntro = function heroIntro() {
   }
 
   // Beat 1 — Identity & Topline
-  tl.to('header.nav', { opacity: 1, duration: 1.0 }, 0)
-    .to('.hero-kicker', { opacity: 1, y: 0, duration: 0.8 }, 0.1)
+  if (!isMobile) {
+    tl.to('header.nav', { opacity: 1, duration: 1.0 }, 0);
+  }
+  tl.to('.hero-kicker', { opacity: 1, y: 0, duration: 0.8 }, 0.1)
     .to('.hero-super', { opacity: 1, y: 0, duration: 0.8 }, 0.2)
     // Beat 2 — Background Name & Ambient Aura
-    .to('.hero-bgname', { opacity: 0.65, duration: 1.8, ease: 'power1.out' }, 0.25)
+    .to('.hero-bgname', { opacity: isMobile ? 0.06 : 0.65, duration: 1.8, ease: 'power1.out' }, 0.25)
     .to('.hero-portrait-aura', { opacity: 1, scale: 1, duration: 1.5, ease: 'power2.out' }, 0.35)
     // Beat 3 — Portrait & Name Reveal
     .to('.hero-portrait', { opacity: 1, y: 0, duration: 1.4, ease: 'power2.out' }, 0.45)
@@ -54,9 +70,9 @@ window.heroIntro = function heroIntro() {
     .to('.hero-cta', { opacity: 1, y: 0, duration: 0.8 }, 1.35)
     .to('.hero-copy-email', { opacity: 1, y: 0, duration: 0.7 }, 1.5)
     .to('.hero-scrollcue', { opacity: 1, y: 0, duration: 0.7 }, 1.6)
-    // Beat 5 — Lateral Side Cards Entrance
-    .to('.float-card', { opacity: 1, x: 0, duration: 0.8, stagger: 0.1, ease: 'power2.out' }, 1.4)
-    .to('.hero-float-traits', { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out' }, 1.5);
+    // Beat 5 — Stats & Traits Cards
+    .to('.float-card', { opacity: 1, x: 0, y: 0, duration: 0.8, stagger: 0.1, ease: 'power2.out' }, 1.4)
+    .to('.hero-float-traits', { opacity: 1, x: 0, y: 0, duration: 0.8, ease: 'power2.out' }, 1.5);
 };
 
 /* ---------- Hero scroll parallax ---------- */
@@ -604,3 +620,99 @@ if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
     }
   });
 })();
+
+/* ---------- Mobile: CSS-Class Scroll Reveal (IntersectionObserver) ---------- */
+// This activates the .reveal → .is-visible CSS transitions defined in mobile.css
+// Works as a performant fallback for elements on narrow viewports
+(function initCSSReveal() {
+  if (reduceMotion) {
+    // Immediately show all revealed elements
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+})();
+
+/* ---------- Mobile: Section Entrance Animations ---------- */
+// Lightweight section fade-ups for mobile that don't use clip-path (GPU-safe)
+(function initMobileSectionAnimations() {
+  if (typeof ScrollTrigger === 'undefined' || window.innerWidth > 767) return;
+  if (reduceMotion) return;
+
+  // Case cards: use simple fade+translate on mobile instead of clip-path
+  gsap.utils.toArray('.case-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, y: 32 },
+      {
+        opacity: 1, y: 0,
+        duration: 0.75,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+          once: true
+        }
+      }
+    );
+  });
+
+  // Tool nodes on mobile: stagger fade-in
+  gsap.utils.toArray('.tool-node').forEach((node, i) => {
+    gsap.fromTo(node,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1, y: 0,
+        duration: 0.6,
+        delay: i * 0.08,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '#toolsEcosystem',
+          start: 'top 88%',
+          once: true
+        }
+      }
+    );
+  });
+
+  // Process steps: stagger fade on mobile
+  gsap.utils.toArray('.timeline-step').forEach((step, i) => {
+    gsap.fromTo(step,
+      { opacity: 0, x: -20 },
+      {
+        opacity: 1, x: 0,
+        duration: 0.65,
+        delay: i * 0.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: step,
+          start: 'top 90%',
+          once: true
+        }
+      }
+    );
+  });
+})();
+
+/* ---------- Mobile: Override clip-path reveal to plain fade for case-media ---------- */
+// The desktop clip-path animation can cause compositing issues on mobile GPUs
+(function initMobileSafeMediaReveal() {
+  if (window.innerWidth > 767) return;
+  // Re-initialize media reveals without clip-path
+  gsap.utils.toArray('.case-media').forEach((fr) => {
+    gsap.set(fr, { clipPath: 'none' }); // clear any clip-path from desktop init
+  });
+})();
+
