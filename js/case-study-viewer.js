@@ -1,12 +1,12 @@
 /**
- * Ismail Khan Portfolio — Case Study Modal Viewer Module
+ * Ismail Khan Portfolio — Case Study Modal Viewer Module (70% Visual / 30% Text)
  * 
  * Features:
- * - Dynamic rendering of discipline-tailored case studies (UI/UX, Branding, Social, Graphic Design)
- * - HTML5 History API integration (/work/[slug] pushState/popstate with safe file:// fallback)
+ * - Dynamic visual-first rendering with full project screens
+ * - Integrated Image Lightbox inspector with arrow navigation & touch gestures
+ * - HTML5 History API integration (/work/[slug] pushState/popstate)
  * - Dynamic document title & meta updating
  * - Seamless keyboard navigation (ESC to close, Left/Right arrow navigation)
- * - Focus trap & WCAG modal accessibility
  */
 
 (function initCaseStudyViewer() {
@@ -19,7 +19,7 @@
   const prevBtn = document.getElementById('csvPrevBtn');
   const nextBtn = document.getElementById('csvNextBtn');
 
-  const projectKeys = Object.keys(CASE_STUDIES_DATA);
+  const projectKeys = ['portfolio-website', 'pearls-eye-photography', 'job-finder', 'flower-hero', 'red-bus', 'ecommerce-headphone'];
   let currentKey = null;
   let lastActiveElement = null;
   const originalTitle = document.title;
@@ -31,12 +31,43 @@
   function findKeyBySlug(slug) {
     if (!slug) return null;
     const clean = slug.replace(/^\/+|\/+$/g, '').toLowerCase();
-    for (const key of projectKeys) {
+    for (const key of Object.keys(CASE_STUDIES_DATA)) {
       if (key.toLowerCase() === clean || (CASE_STUDIES_DATA[key].slug && CASE_STUDIES_DATA[key].slug.toLowerCase() === clean)) {
         return key;
       }
     }
     return null;
+  }
+
+  function formatVisualBlock(block) {
+    let gridClass = 'cs-grid-full';
+    if (block.layout === 'duo') gridClass = 'cs-grid-duo';
+    else if (block.layout === 'trio') gridClass = 'cs-grid-trio';
+    else if (block.layout === 'quad') gridClass = 'cs-grid-quad';
+    else if (block.layout === 'flow') gridClass = 'cs-flow-sequence';
+
+    const imagesHtml = (block.images || []).map(img => `
+      <div class="cs-screen-wrapper">
+        <img src="${img.src}" alt="${img.caption || img.label || 'Project Screen'}" loading="lazy" decoding="async" />
+        <div class="cs-screen-label">
+          <span class="cs-screen-num">${img.label || 'SCREEN'}</span>
+          <span class="cs-screen-caption">${img.caption || ''}</span>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <div class="cs-visual-block">
+        <div class="cs-block-header">
+          <span class="cs-block-tag">${block.tag || 'SHOWCASE'}</span>
+          <h3 class="cs-block-title">${block.title || ''}</h3>
+        </div>
+        ${block.desc ? `<p class="cs-block-desc">${block.desc}</p>` : ''}
+        <div class="${gridClass}" style="margin-top: 16px;">
+          ${imagesHtml}
+        </div>
+      </div>
+    `;
   }
 
   function formatSection(sec) {
@@ -82,32 +113,6 @@
         `</div>`;
     }
 
-    if (sec.deliverables && sec.deliverables.length) {
-      extraHtml += `<div class="csv-deliverables-grid">` +
-        sec.deliverables.map(d => `
-          <div class="csv-deliv-item">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>${d}</span>
-          </div>
-        `).join('') +
-        `</div>`;
-    }
-
-    if (sec.metrics && sec.metrics.length) {
-      extraHtml += `<div class="csv-metrics-grid">` +
-        sec.metrics.map(m => `
-          <div class="csv-metric-card">
-            <span class="csv-metric-num mono">${m.num}</span>
-            <p class="csv-metric-desc">${m.desc}</p>
-          </div>
-        `).join('') +
-        `</div>`;
-    }
-
-    if (sec.notes) {
-      extraHtml += `<div class="csv-note-box"><span class="mono">KEY TAKEAWAY</span><p>${sec.notes}</p></div>`;
-    }
-
     return `
       <section class="csv-section ${sec.type || ''}">
         <div class="csv-section-header">
@@ -125,7 +130,7 @@
     if (!data) return;
 
     currentKey = key;
-    const currentIndex = projectKeys.indexOf(key);
+    const currentIndex = projectKeys.indexOf(key) !== -1 ? projectKeys.indexOf(key) : 0;
 
     const prevIndex = (currentIndex - 1 + projectKeys.length) % projectKeys.length;
     const nextIndex = (currentIndex + 1) % projectKeys.length;
@@ -133,17 +138,22 @@
     const prevKey = projectKeys[prevIndex];
     const nextKey = projectKeys[nextIndex];
 
-    const prevData = CASE_STUDIES_DATA[prevKey];
-    const nextData = CASE_STUDIES_DATA[nextKey];
+    const prevData = CASE_STUDIES_DATA[prevKey] || {};
+    const nextData = CASE_STUDIES_DATA[nextKey] || {};
 
     if (prevBtn) {
       prevBtn.dataset.targetKey = prevKey;
-      prevBtn.querySelector('.csv-nav-sub').textContent = prevData.title;
+      const sub = prevBtn.querySelector('.csv-nav-sub');
+      if (sub) sub.textContent = prevData.title || 'Previous Project';
     }
     if (nextBtn) {
       nextBtn.dataset.targetKey = nextKey;
-      nextBtn.querySelector('.csv-nav-sub').textContent = nextData.title;
+      const sub = nextBtn.querySelector('.csv-nav-sub');
+      if (sub) sub.textContent = nextData.title || 'Next Project';
     }
+
+    const visualBlocksHtml = (data.visualShowcase || []).map(formatVisualBlock).join('');
+    const narrativeSectionsHtml = (data.sections || []).map(formatSection).join('');
 
     // Build Full Case Study HTML
     bodyEl.innerHTML = `
@@ -158,7 +168,7 @@
         <div class="csv-meta-strip">
           <div class="csv-meta-col">
             <span class="csv-meta-lbl mono">ROLE</span>
-            <span class="csv-meta-val">${data.meta.role || 'Designer'}</span>
+            <span class="csv-meta-val">${data.meta.role || 'UI/UX Designer'}</span>
           </div>
           <div class="csv-meta-col">
             <span class="csv-meta-lbl mono">TIMELINE</span>
@@ -170,18 +180,34 @@
           </div>
           <div class="csv-meta-col">
             <span class="csv-meta-lbl mono">TOOLS</span>
-            <span class="csv-meta-val">${data.meta.tools || 'Figma, Illustrator'}</span>
+            <span class="csv-meta-val">${data.meta.tools || 'Figma'}</span>
           </div>
         </div>
 
-        <div class="csv-hero-frame">
-          <img src="${data.heroImage}" alt="${data.title} Cover View" class="csv-hero-img" loading="eager" decoding="async">
-          <div class="csv-hero-glow" style="background: radial-gradient(circle at center, ${data.accentColor || '#E8862E'}33 0%, transparent 70%);"></div>
+        <div class="cs-screen-wrapper csv-hero-frame" style="margin-top: 24px;">
+          <img src="${data.heroImage}" alt="${data.title} Primary View" class="csv-hero-img" loading="eager" decoding="async">
+          <div class="cs-screen-label">
+            <span class="cs-screen-num">00 — HERO PREVIEW</span>
+            <span class="cs-screen-caption">Click to expand high-resolution view</span>
+          </div>
         </div>
       </article>
 
+      ${data.overview ? `
+        <div class="csv-overview-box" style="margin: 32px 0; padding: 24px; background: rgba(20,23,28,0.5); border-left: 2px solid var(--amber); border-radius: 0 8px 8px 0;">
+          <span class="mono" style="font-size: 0.7rem; color: var(--amber); letter-spacing: 0.1em; display: block; margin-bottom: 6px;">PROJECT OVERVIEW</span>
+          <p style="font-size: 1rem; line-height: 1.6; color: var(--paper); margin: 0;">${data.overview}</p>
+        </div>
+      ` : ''}
+
+      <!-- Visual Showcase (70% Visual) -->
+      <div class="cs-visual-showcase">
+        ${visualBlocksHtml}
+      </div>
+
+      <!-- Concise Narrative & Learnings (30% Text) -->
       <div class="csv-sections-container">
-        ${data.sections.map(formatSection).join('')}
+        ${narrativeSectionsHtml}
       </div>
     `;
 
@@ -191,21 +217,24 @@
 
     // Update document title for SEO & bookmarking
     document.title = `${data.title} | Ismail Khan — UI/UX Designer`;
+
+    // Bind Lightbox to all rendered screens
+    if (window.CaseStudyLightbox && window.CaseStudyLightbox.bind) {
+      window.CaseStudyLightbox.bind(bodyEl);
+    }
   }
 
   function updateUrl(slug, isOpening) {
     try {
       if (window.location.protocol === 'file:') {
-        // Under file:// protocol, use hash to prevent SecurityError
         if (isOpening) {
           window.location.hash = `work/${slug}`;
         } else if (window.location.hash.startsWith('#work/')) {
           history.replaceState(null, '', window.location.pathname);
         }
       } else {
-        // Under http/https protocol, use pushState for clean URLs
         if (isOpening) {
-          const newUrl = `/work/${slug}`;
+          const newUrl = `/work/${slug}/`;
           if (window.location.pathname !== newUrl) {
             history.pushState({ modalOpen: true, projectKey: currentKey }, '', newUrl);
           }
@@ -215,9 +244,7 @@
           }
         }
       }
-    } catch (e) {
-      // Graceful fallback
-    }
+    } catch (e) {}
   }
 
   function openCaseStudy(key, pushHistory = true) {
@@ -239,7 +266,7 @@
     if (typeof gsap !== 'undefined') {
       gsap.fromTo(modal.querySelector('.csv-dialog'),
         { opacity: 0, y: 30, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'power3.out' }
+        { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power3.out' }
       );
     }
 
@@ -249,23 +276,19 @@
   function closeCaseStudy(pushHistory = true) {
     if (!modal.classList.contains('is-open')) return;
 
-    if (pushHistory) {
-      updateUrl('', false);
-    }
-
-    document.title = originalTitle;
-
     if (typeof gsap !== 'undefined') {
       gsap.to(modal.querySelector('.csv-dialog'), {
         opacity: 0,
         y: 20,
         scale: 0.98,
         duration: 0.25,
-        ease: 'power2.in',
+        ease: 'power3.in',
         onComplete: () => {
           modal.classList.remove('is-open');
           modal.setAttribute('aria-hidden', 'true');
           document.body.classList.remove('modal-scroll-lock');
+          document.title = originalTitle;
+          if (pushHistory) updateUrl('', false);
           if (lastActiveElement) lastActiveElement.focus();
         }
       });
@@ -273,92 +296,114 @@
       modal.classList.remove('is-open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-scroll-lock');
+      document.title = originalTitle;
+      if (pushHistory) updateUrl('', false);
       if (lastActiveElement) lastActiveElement.focus();
     }
   }
 
-  // Event Listeners
+  function bindTriggers() {
+    document.querySelectorAll('[data-case-id]').forEach(trigger => {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        const key = this.getAttribute('data-case-id');
+        if (key && CASE_STUDIES_DATA[key]) {
+          openCaseStudy(key, true);
+        }
+      });
+    });
+  }
+
+  // Next / Prev button wiring in modal footer
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function () {
+      const target = this.dataset.targetKey;
+      if (target) openCaseStudy(target, true);
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function () {
+      const target = this.dataset.targetKey;
+      if (target) openCaseStudy(target, true);
+    });
+  }
+
   if (closeBtn) closeBtn.addEventListener('click', () => closeCaseStudy(true));
   if (backdrop) backdrop.addEventListener('click', () => closeCaseStudy(true));
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (prevBtn.dataset.targetKey) {
-        renderCaseStudy(prevBtn.dataset.targetKey);
-        updateUrl(getProjectSlug(prevBtn.dataset.targetKey), true);
-      }
-    });
-  }
+  // Global escape & arrow navigation
+  window.addEventListener('keydown', function (e) {
+    // If image lightbox is open, let lightbox handle it
+    const lb = document.getElementById('csLightbox');
+    if (lb && lb.classList.contains('is-open')) return;
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (nextBtn.dataset.targetKey) {
-        renderCaseStudy(nextBtn.dataset.targetKey);
-        updateUrl(getProjectSlug(nextBtn.dataset.targetKey), true);
-      }
-    });
-  }
-
-  // Global trigger listener for all case study buttons / links
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-case-id]');
-    if (trigger) {
-      e.preventDefault();
-      const key = trigger.getAttribute('data-case-id');
-      openCaseStudy(key, true);
-    }
-  });
-
-  // Keyboard Navigation
-  window.addEventListener('keydown', (e) => {
     if (!modal.classList.contains('is-open')) return;
+
     if (e.key === 'Escape') {
       closeCaseStudy(true);
     } else if (e.key === 'ArrowLeft' && prevBtn && prevBtn.dataset.targetKey) {
-      renderCaseStudy(prevBtn.dataset.targetKey);
-      updateUrl(getProjectSlug(prevBtn.dataset.targetKey), true);
+      openCaseStudy(prevBtn.dataset.targetKey, true);
     } else if (e.key === 'ArrowRight' && nextBtn && nextBtn.dataset.targetKey) {
-      renderCaseStudy(nextBtn.dataset.targetKey);
-      updateUrl(getProjectSlug(nextBtn.dataset.targetKey), true);
+      openCaseStudy(nextBtn.dataset.targetKey, true);
     }
   });
 
-  // History Popstate Handling (Browser Back / Forward)
-  window.addEventListener('popstate', (e) => {
-    if (modal.classList.contains('is-open')) {
-      if (e.state && e.state.projectKey) {
-        renderCaseStudy(e.state.projectKey);
+  // History Popstate Handling
+  window.addEventListener('popstate', function (e) {
+    if (window.location.protocol === 'file:') {
+      const hash = window.location.hash;
+      if (hash.startsWith('#work/')) {
+        const slug = hash.replace('#work/', '');
+        const key = findKeyBySlug(slug);
+        if (key) openCaseStudy(key, false);
       } else {
         closeCaseStudy(false);
       }
-    } else if (e.state && e.state.projectKey) {
-      openCaseStudy(e.state.projectKey, false);
+      return;
+    }
+
+    const path = window.location.pathname;
+    if (path.startsWith('/work/')) {
+      const parts = path.split('/').filter(Boolean);
+      const slug = parts[1] || '';
+      const key = findKeyBySlug(slug);
+      if (key) {
+        openCaseStudy(key, false);
+      } else {
+        closeCaseStudy(false);
+      }
+    } else {
+      closeCaseStudy(false);
     }
   });
 
-  // Check URL on Initial Load
-  (function checkInitialRoute() {
-    const hash = window.location.hash;
+  // Check initial URL on page load
+  function checkInitialRoute() {
+    if (window.location.protocol === 'file:') {
+      const hash = window.location.hash;
+      if (hash.startsWith('#work/')) {
+        const slug = hash.replace('#work/', '');
+        const key = findKeyBySlug(slug);
+        if (key) openCaseStudy(key, false);
+      }
+      return;
+    }
+
     const path = window.location.pathname;
-
-    let targetKey = null;
-    if (hash && hash.startsWith('#work/')) {
-      const slug = hash.replace('#work/', '');
-      targetKey = findKeyBySlug(slug);
-    } else if (path && path.startsWith('/work/')) {
-      const slug = path.replace('/work/', '').replace(/\/$/, '');
-      targetKey = findKeyBySlug(slug);
+    if (path.startsWith('/work/')) {
+      const parts = path.split('/').filter(Boolean);
+      const slug = parts[1] || '';
+      const key = findKeyBySlug(slug);
+      if (key) {
+        setTimeout(() => openCaseStudy(key, false), 100);
+      }
     }
+  }
 
-    if (targetKey) {
-      // Delay slightly for initial animations
-      setTimeout(() => {
-        openCaseStudy(targetKey, false);
-      }, 300);
-    }
-  })();
+  // Init
+  bindTriggers();
+  checkInitialRoute();
 
-  // Expose global methods
-  window.openCaseStudy = openCaseStudy;
-  window.closeCaseStudy = closeCaseStudy;
+  window.openCaseStudyModal = openCaseStudy;
+  window.closeCaseStudyModal = closeCaseStudy;
 })();

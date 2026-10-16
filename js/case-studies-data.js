@@ -1,503 +1,567 @@
 /**
- * Ismail Khan Portfolio — Tailored Case Studies Dataset
+ * Ismail Khan Portfolio — Tailored Case Studies Dataset (70% Visual / 30% Text)
  * 
- * Each project structure is specifically adapted to its discipline:
- * - UI/UX: Problem, Goals, Research, User Pain Points, User Flow, Wireframes, UI Design, Design System, Prototype, Final Screens, Outcome
- * - Branding: Brief, Brand Direction, Concept, Logo, Typography, Color System, Identity, Applications, Final Brand
- * - Social Media: Business Goal, Content Direction, Visual System, Post Design, Carousel, Campaign, Ad Creatives, Final Content System
- * - Graphic Design: Brief, Concept, Visual Direction, Design Exploration, Final Design, Applications
+ * Sourced directly from authentic Framer portfolio work (https://ismailkhan.framer.website/):
+ * - Portfolio Website (Personal UI/UX Portfolio built in Figma + Framer)
+ * - Pearl's Eye Photography (UI/UX Case Study)
+ * - Job Finder (Mobile App UI Exploration)
+ * - Flower Hero Page Design (Landing Page UI)
+ * - RedBus (Mobile App UI Redesign)
+ * - E-Commerce Headphone (Landing Page UI Redesign)
  * 
- * Note: Concept & self-initiated projects are explicitly labeled to maintain maximum professional credibility.
+ * Clean structure: Each project includes an `images` array for easy future high-res asset replacement.
  */
 
 const CASE_STUDIES_DATA = {
-  fintra: {
-    id: 'fintra',
-    slug: 'fintra',
+  'portfolio-website': {
+    id: 'portfolio-website',
+    slug: 'portfolio-website',
+    prevSlug: 'ecommerce-headphone',
+    nextSlug: 'pearls-eye-photography',
     category: 'UI/UX Design',
-    categoryCode: '01 — UI/UX & PRODUCT',
-    status: 'CONCEPT PROJECT',
-    title: 'Fintra — Banking, simplified.',
-    subtitle: 'A modern digital banking interface designed to reduce cognitive friction, improve financial transparency, and streamline everyday money transfers.',
+    categoryCode: '01 — FEATURED PROJECT',
+    status: 'PERSONAL PORTFOLIO',
+    title: 'Portfolio Website',
+    subtitle: 'A personal UI/UX portfolio designed to communicate my design skills, selected work, and design approach through an interactive digital experience.',
     meta: {
       role: 'UI/UX Designer',
-      type: 'Product Design Concept',
-      timeline: '4 Weeks',
-      discipline: 'UI/UX Design & Design Systems',
-      tools: 'Figma, FigJam, Prototyping',
-      deliverables: 'Web Dashboard, Mobile App UI, Design System'
+      type: 'Personal Portfolio',
+      timeline: 'Concept to Framer',
+      discipline: 'UI/UX Design',
+      tools: 'Figma, Framer',
+      deliverables: 'Personal Brand, Responsive Web Experience, Case Studies'
     },
-    heroImage: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=1200&auto=format&fit=crop&q=80',
+    heroImage: '/assets/images/framer-portfolio/desktop_hero.webp',
     accentColor: '#E8862E',
+    overview: 'The project was designed as a personal UI/UX portfolio to present my design skills, selected work, tools and approach in a clear and visually engaging way.',
+    visualShowcase: [
+      {
+        tag: '01 // HERO & BRAND POSITIONING',
+        title: 'Desktop Introduction & Identity',
+        desc: 'Bold headline statement, role definition, and direct access to View CV with dark glass aesthetic.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/desktop_hero.webp',
+            label: '01 — HERO DISPLAY',
+            caption: 'Desktop Hero view — Role positioning, headline typography and CTA buttons'
+          }
+        ]
+      },
+      {
+        tag: '02 // SKILLS & ABOUT PHILOSOPHY',
+        title: 'Core Capabilities & Design Approach',
+        desc: 'Visual display of design competencies, workflow tools (Figma, Canva, Framer), and user-centered design philosophy.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/desktop_skills_tools.webp',
+            label: '02 — SKILLS & TOOLS',
+            caption: 'Categorized design competencies & software tools'
+          },
+          {
+            src: '/assets/images/framer-portfolio/desktop_about.webp',
+            label: '03 — ABOUT SECTION',
+            caption: 'Design philosophy focused on curiosity and empathy'
+          }
+        ]
+      },
+      {
+        tag: '03 // SELECTED WORK ARCHITECTURE',
+        title: 'Project Presentation & Exploration Cards',
+        desc: 'Showcase grid highlighting Photography portfolio and UI Visual Exploration design sprints.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/desktop_project_photography.webp',
+            label: '04 — PHOTOGRAPHY CASE STUDY',
+            caption: 'Featured Photography project card leading to deep case study'
+          },
+          {
+            src: '/assets/images/framer-portfolio/desktop_projects_overview.webp',
+            label: '05 — WORK SHOWCASE GRID',
+            caption: 'Multi-project layout with interactive hover states'
+          }
+        ]
+      },
+      {
+        tag: '04 // MOBILE ADAPTATION',
+        title: 'Complete Responsive Mobile Experience',
+        desc: 'Thumb-friendly navigation, stacked project cards, and legible typography across mobile viewports.',
+        layout: 'quad',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/mobile_hero.webp',
+            label: '06 — MOBILE HERO',
+            caption: 'Header & positioning'
+          },
+          {
+            src: '/assets/images/framer-portfolio/mobile_skills.webp',
+            label: '07 — MOBILE SKILLS',
+            caption: 'Capabilities list'
+          },
+          {
+            src: '/assets/images/framer-portfolio/mobile_about.webp',
+            label: '08 — MOBILE ABOUT',
+            caption: 'Personal story'
+          },
+          {
+            src: '/assets/images/framer-portfolio/mobile_contact.webp',
+            label: '09 — MOBILE FOOTER',
+            caption: 'Contact & social links'
+          }
+        ]
+      }
+    ],
     sections: [
       {
-        type: 'problem',
-        tag: '01 // THE PROBLEM',
-        title: 'Cluttered Interfaces & High Cognitive Load in Banking',
-        content: `Traditional banking applications often overwhelm users with excessive menus, hidden balances, and multi-layered transfer flows. Everyday tasks—like checking actual spendable funds or initiating a quick peer-to-peer transfer—require navigating through dense, confusing submenus.`
-      },
-      {
         type: 'goals',
-        tag: '02 // PROJECT GOALS',
-        title: 'Clarity, Speed, and Reassurance',
-        content: `The primary objective was to rethink digital retail banking by designing an interface that prioritizes speed and mental clarity:`,
+        tag: '05 // DESIGN GOALS',
+        title: 'Clear Purpose & Factual Objectives',
+        content: `The portfolio was created with six core design objectives visible throughout the interface:`,
         bullets: [
-          '<strong>Instant Financial Health:</strong> Display clear spendable liquidity versus pending expenses at first glance.',
-          '<strong>Frictionless Money Transfers:</strong> Reduce the core transfer flow to 3 straightforward steps with clear visual confirmation.',
-          '<strong>Proactive Card Controls:</strong> Place card locking, limits, and virtual card generation within instant reach.',
-          '<strong>Accessible Dark Glass Aesthetic:</strong> Maintain high contrast and clear visual hierarchy across both desktop and mobile viewports.'
-        ]
-      },
-      {
-        type: 'research',
-        tag: '03 // RESEARCH & USER PAIN POINTS',
-        title: 'Identifying Core User Frustrations',
-        content: `Through comparative analysis of popular retail banking apps and user journey mapping, several critical UX bottlenecks were highlighted:`,
-        bullets: [
-          '<strong>Ambiguous Account Balances:</strong> Users struggle to separate posted transactions from authorized holds.',
-          '<strong>Fear of Transfer Errors:</strong> Anxiety during recipient selection when account names and numbers lack visual clarity.',
-          '<strong>Hidden Account Security:</strong> Inability to quickly freeze a compromised card without digging through settings menus.',
-          '<strong>Complex Charts:</strong> Data visualizations that present raw numbers without practical context on monthly spending patterns.'
-        ]
-      },
-      {
-        type: 'flow',
-        tag: '04 // USER FLOW & INFORMATION ARCHITECTURE',
-        title: 'A Flattened 3-Pillar Navigation Structure',
-        content: `The application architecture was restructured from a nested 12-page tree into 3 direct primary pillars: Overview, Analytics, and Vaults.`,
-        diagram: [
-          { step: '01. Overview', desc: 'Real-time liquidity, upcoming recurring bills, and instant card toggles' },
-          { step: '02. Analytics', desc: 'Category-based cashflow insights, spend trends, and monthly breakdown' },
-          { step: '03. Vaults', desc: 'Dedicated savings pockets, automated round-ups, and financial goals' }
-        ]
-      },
-      {
-        type: 'wireframes',
-        tag: '05 // WIREFRAMES & LAYOUT EXPLORATION',
-        title: 'Iterating Toward Ergonomic Screen Hierarchy',
-        content: `Low-fidelity wireframing explored various dashboard layouts to optimize the visual balance between account balances, quick-action shortcuts (Transfer, Request, Exchange, Deposit), and recent activity feeds. Testing prioritized card-based grouping over standard tabular lists for faster visual scanning.`
-      },
-      {
-        type: 'design_system',
-        tag: '06 // DESIGN SYSTEM & TOKENS',
-        title: 'High-Contrast Editorial Dark Theme System',
-        content: `A comprehensive design system was constructed in Figma utilizing atomic tokens for typography, spacing, border radii, and color contrast compliant with WCAG accessibility standards.`,
-        palette: [
-          { name: 'Obsidian Canvas', hex: '#0D0E10' },
-          { name: 'Surface Slate', hex: '#151619' },
-          { name: 'Warm Amber Focus', hex: '#E8862E' },
-          { name: 'Mint Inflow Accent', hex: '#2FA79B' },
-          { name: 'Paper Text Primary', hex: '#EEEAE2' }
-        ]
-      },
-      {
-        type: 'final_screens',
-        tag: '07 // UI DESIGN & PROTOTYPE',
-        title: 'Refined Desktop & Mobile Interface',
-        content: `The final high-fidelity design features a unified dark glass aesthetic, custom micro-interactions for transaction pills, an interactive cashflow analytics chart, and a dedicated virtual card manager.`,
-        deliverables: [
-          'Responsive Web Dashboard (Desktop & Tablet layouts)',
-          'Complete Mobile App Design (iOS & Android guidelines)',
-          'Interactive Clickable Figma Prototype',
-          'Component Token Library & Auto-Layout Specs'
+          '<strong>Present Myself as a UI/UX Designer:</strong> Clearly communicate my focus on crafting intuitive and impactful digital experiences.',
+          '<strong>Showcase Selected Projects:</strong> Provide dedicated case study breakdowns with structured problem-solving flows.',
+          '<strong>Communicate Design Skills:</strong> Explicitly present competencies in User-Centered Design, Visual Design, Wireframing, UI Design, and Prototyping.',
+          '<strong>Present Tools and Capabilities:</strong> Highlight day-to-day workflow tools including Figma, Canva, and Framer.'
         ]
       },
       {
         type: 'outcome',
-        tag: '08 // PROJECT OUTCOME',
-        title: 'Design Summary & Key Takeaways',
-        content: `Fintra demonstrates how structured UX analysis and restrained visual styling can transform complex financial tools into clear, calming, and intuitive digital experiences.`
+        tag: '06 // OUTCOME',
+        title: 'End-to-End Execution',
+        content: `The final portfolio created a central place to communicate my UI/UX capabilities, present selected projects and establish a visual personal identity.`,
+        stats: [
+          { value: 'Figma → Framer', label: 'End-to-End Execution' },
+          { value: '2 Case Studies', label: 'Documented Work' },
+          { value: '100% Responsive', label: 'Desktop & Mobile' }
+        ]
       }
     ]
   },
 
-  apex: {
-    id: 'apex',
-    slug: 'apex',
+  'pearls-eye-photography': {
+    id: 'pearls-eye-photography',
+    slug: 'pearls-eye-photography',
+    prevSlug: 'portfolio-website',
+    nextSlug: 'job-finder',
     category: 'UI/UX Design',
-    categoryCode: '02 — UI/UX & TERMINAL',
-    status: 'CONCEPT PROJECT',
-    title: 'Apex Pro Trading Terminal',
-    subtitle: 'A high-density web trading terminal designed for active crypto and multi-asset traders, balancing massive real-time data depth with eye-strain reduction.',
+    categoryCode: '01 — UI/UX CASE STUDY',
+    status: 'SELECTED WORK',
+    title: "Pearl's Eye Photography",
+    subtitle: 'A modern, minimal, and visually engaging website designed for a professional photographer to highlight their work and turn visitors into clients.',
     meta: {
       role: 'UI/UX Designer',
-      type: 'Terminal Interface Concept',
-      timeline: '3 Weeks',
-      discipline: 'High-Density UI/UX & Data Visualization',
-      tools: 'Figma, Vector Grid, Auto-Layout',
-      deliverables: 'Multi-Panel Desktop Workspace, Order Book UI, Component Library'
+      type: 'Client / Portfolio Design',
+      timeline: '7–10 Days',
+      discipline: 'UI/UX Design',
+      tools: 'Figma, Unsplash, Google Fonts',
+      deliverables: 'User Research, Site Structure, Wireframes, Hi-Fi UI, Prototype'
     },
-    heroImage: 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?w=1200&auto=format&fit=crop&q=80',
+    heroImage: '/assets/images/framer-portfolio/cs1_hero.png',
     accentColor: '#E8862E',
+    overview: 'Photographers often lack a centralized, professionally designed space to showcase their work and attract high-value clients. The goal was to build a responsive, modern website with clear CTAs and focused layouts to elevate the photographer\'s brand and improve client engagement.',
+    visualShowcase: [
+      {
+        tag: '01 // HERO BANNER',
+        title: 'Visual Identity & Hero Header',
+        desc: 'Distraction-free hero layout pairing authentic photography with clean editorial typography.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/cs1_hero.png',
+            label: '01 — HERO BANNER',
+            caption: 'Distraction-free hero layout with clean typography and booking CTA'
+          }
+        ]
+      },
+      {
+        tag: '02 // UX ROADMAP',
+        title: '5-Stage Design Process',
+        desc: 'Structured methodology: Understand → Define → Ideate → Design → Test.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/cs1_process.png',
+            label: '02 — UX METHODOLOGY',
+            caption: 'Structured 5-stage design workflow from research to prototype testing'
+          }
+        ]
+      },
+      {
+        tag: '03 // CORE INTERFACE MODULES',
+        title: 'Storytelling About & Visual Gallery',
+        desc: 'High-fidelity screens crafted to establish trust and immerse visitors in the visual portfolio.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/cs1_screen_about.png',
+            label: '03 — ABOUT STORY',
+            caption: 'Personal creative story, photographer portrait & mission statement'
+          },
+          {
+            src: '/assets/images/framer-portfolio/cs1_screen_gallery.png',
+            label: '04 — VISUAL GALLERY',
+            caption: 'Multi-category photo and video gallery grid with smooth tab toggles'
+          }
+        ]
+      },
+      {
+        tag: '04 // CONVERSION & PRICING',
+        title: 'Transparent Package Pricing Matrix',
+        desc: 'Tiered pricing breakdown with transparent deliverables and high-contrast call-to-action buttons.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/cs1_screen_pricing.png',
+            label: '05 — PRICING PACKAGES',
+            caption: 'Package comparison table facilitating easy client booking decisions'
+          }
+        ]
+      }
+    ],
     sections: [
       {
-        type: 'problem',
-        tag: '01 // THE PROBLEM',
-        title: 'Information Density vs. Cognitive Fatigue in Financial Terminals',
-        content: `Active trading platforms must display hundreds of simultaneous data points—candlestick charts, depth ladders, tick streams, order books, and execution logs. Most platforms either oversimplify the interface or present cluttered, illegible layouts that cause severe visual fatigue during extended sessions.`
-      },
-      {
-        type: 'goals',
-        tag: '02 // PROJECT GOALS',
-        title: 'Maximum Information Depth with Visual Clarity',
-        content: `The goal was to design an ergonomic, modular trading interface that delivers institutional-grade functionality with clean visual hierarchy:`,
-        bullets: [
-          '<strong>High-Density Layouts:</strong> Fit critical market indicators on a single screen without sacrificing readability.',
-          '<strong>Subdued Contrast Palette:</strong> Use ultra-deep charcoal backgrounds with selective amber/teal highlights to mitigate eye strain.',
-          '<strong>Keyboard-Friendly Order Entry:</strong> Design one-click and hotkey-driven trade execution panels.',
-          '<strong>Modular Panel Docking:</strong> Establish consistent grid rules for resizable chart and order book modules.'
-        ]
-      },
-      {
-        type: 'research',
-        tag: '03 // TRADER WORKFLOW ANALYSIS',
-        title: 'Analyzing High-Speed Decision Making',
-        content: `Studying trader workflows highlighted that visual focus shifts rapidly between price action, order book depth, and open position risk. Hierarchy must ensure critical status indicators are recognizable in peripheral vision.`,
-        bullets: [
-          '<strong>Color Semantics:</strong> Consistent use of green/teal for bids and coral/amber for asks without visual vibration.',
-          '<strong>Monospaced Precision:</strong> Tabular numerals across all prices, sizes, and PnL indicators to prevent jumping text.',
-          '<strong>Scannable Order Books:</strong> Visual depth bars behind numeric bids and asks for instant liquidity comprehension.'
-        ]
-      },
-      {
-        type: 'architecture',
-        tag: '04 // WORKSPACE MODULAR GRID',
-        title: 'Structured Multi-Column Layout Architecture',
-        content: `The terminal layout is organized into 3 primary functional zones designed for quick horizontal eye-tracking:`,
-        diagram: [
-          { step: 'Left Dock', desc: 'Multi-asset market selector, 24h ticker feed, and watchlist' },
-          { step: 'Center Canvas', desc: 'Real-time candlestick chart stage with technical overlay toolbar' },
-          { step: 'Right Wing', desc: 'Order book depth ladder, recent trade prints, and one-click order form' }
-        ]
-      },
-      {
-        type: 'design_system',
-        tag: '05 // DESIGN SYSTEM & ATOMIC TOKENS',
-        title: 'Ergonomic Dark UI Architecture',
-        content: `Built a strict tokenized design system using dark neutral tones and monospaced typography to support micro-layouts and dense data tables.`,
-        palette: [
-          { name: 'Deep Terminal Base', hex: '#0A0C0E' },
-          { name: 'Panel Surface', hex: '#13161B' },
-          { name: 'Bid Teal Green', hex: '#2FA79B' },
-          { name: 'Ask Coral Amber', hex: '#E8862E' },
-          { name: 'Grid Border Muted', hex: '#22262E' }
-        ]
-      },
-      {
-        type: 'final_screens',
-        tag: '06 // UI DESIGN & ASSETS',
-        title: 'The Apex Terminal Workspace',
-        content: `The completed interface includes detailed specs for candlestick chart toolbars, floating order book widgets, position managers, and alert dialogs.`,
-        deliverables: [
-          'Full-Screen Desktop Trading Interface Mockup',
-          'Modular Widget Component Specs',
-          'Order Book & Execution State Variants',
-          'Figma Interactive Prototype'
-        ]
-      },
-      {
         type: 'outcome',
-        tag: '07 // OUTCOME',
-        title: 'Project Takeaway',
-        content: `Apex Terminal illustrates how disciplined UI/UX systems can handle extreme information density while remaining clean, legible, and effortless to navigate.`
+        tag: '05 // PHILOSOPHY & SUMMARY',
+        title: 'Design Summary',
+        content: `“Designing for photographers means letting the visuals breathe while keeping the experience invisible — just like a perfect shot.” The finished design created an engaging platform tailored to high-value client acquisition.`
       }
     ]
   },
 
-  solstice: {
-    id: 'solstice',
-    slug: 'solstice',
-    category: 'Branding',
-    categoryCode: '03 — BRAND IDENTITY & PACKAGING',
-    status: 'CONCEPT PROJECT',
-    title: 'Solstice Specialty Coffee',
-    subtitle: 'Brand identity system, bespoke packaging architecture, and retail collateral for an artisanal single-origin coffee roastery.',
+  'job-finder': {
+    id: 'job-finder',
+    slug: 'job-finder',
+    prevSlug: 'pearls-eye-photography',
+    nextSlug: 'flower-hero',
+    category: 'UI/UX Design',
+    categoryCode: '02 — MOBILE APP UI',
+    status: 'UI EXPLORATION',
+    title: 'Job Finder — Mobile App UI',
+    subtitle: 'A seamless and intuitive job search mobile experience that empowers users to find and apply for jobs with ease and confidence.',
     meta: {
-      role: 'Brand Designer',
-      type: 'Brand Identity Concept',
-      timeline: '3 Weeks',
-      discipline: 'Brand Identity & Packaging Design',
-      tools: 'Adobe Illustrator, Photoshop, Figma',
-      deliverables: 'Wordmark, Packaging Labels, Brand Guidelines, Retail Collateral'
+      role: 'UI/UX Designer',
+      type: 'Mobile App UI Exploration',
+      timeline: '1 Week',
+      discipline: 'UI/UX Design',
+      tools: 'Figma',
+      deliverables: 'Mobile Screen Flows, Filter System, Application UX'
     },
-    heroImage: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1200&auto=format&fit=crop&q=80',
-    accentColor: '#E8862E',
-    sections: [
-      {
-        type: 'brief',
-        tag: '01 // BRAND BRIEF',
-        title: 'Artisanal Craftsmanship Meets Modern Editorial Style',
-        content: `Solstice is a conceptual specialty roastery focused on transparent single-origin sourcing and precision small-batch roasting. The project required a distinctive visual identity that bridges Scandinavian minimalist restraint with the tactile warmth of coffee culture.`
-      },
-      {
-        type: 'direction',
-        tag: '02 // BRAND DIRECTION & POSITIONING',
-        title: 'The Warmth of the Solar Solstice',
-        content: `The creative direction drew inspiration from the celestial solstice—the solar cycle that nurtures high-altitude coffee plants. This was translated into circular solar geometry, rich warm amber hues, earthy kraft tones, and refined editorial typography.`
-      },
-      {
-        type: 'logo',
-        tag: '03 // LOGO & WORDMARK DESIGN',
-        title: 'Custom Typography Wordmark & Solar Emblem',
-        content: `Designed a custom serif wordmark with balanced letterforms and distinct ligatures, paired with a circular solar seal suitable for wax stamps, cup sleeves, and packaging badges.`,
-        bullets: [
-          '<strong>Custom Wordmark:</strong> Refined serif letterforms with distinctive balance and high legibility at all scales.',
-          '<strong>The Solar Emblem:</strong> A circular secondary mark used across merchandise, bag seals, and digital avatars.',
-          '<strong>Grid Alignment:</strong> Precise geometric proportions for versatile application across horizontal and stacked lockups.'
-        ]
-      },
-      {
-        type: 'typography_color',
-        tag: '04 // TYPOGRAPHY & COLOR SYSTEM',
-        title: 'Warm Editorial Palette & Typographic Hierarchy',
-        content: `Constructed a cohesive color system that pairs deep volcanic charcoal with radiant amber accents and unbleached cream tones.`,
-        palette: [
-          { name: 'Solstice Amber', hex: '#E8862E' },
-          { name: 'Espresso Black', hex: '#161412' },
-          { name: 'Unbleached Cream', hex: '#D9CEBA' },
-          { name: 'Forest Roast Green', hex: '#263328' }
-        ]
-      },
-      {
-        type: 'packaging',
-        tag: '05 // PACKAGING ARCHITECTURE',
-        title: 'Modular Coffee Bag Label Grid',
-        content: `Designed a modular packaging system that allows rotating seasonal single-origin releases without changing the base bag stock. A standardized matte pouch is customized through color-coded origin labels detailing country, altitude, process, and tasting notes.`
-      },
-      {
-        type: 'applications',
-        tag: '06 // RETAIL & BRAND APPLICATIONS',
-        title: 'Cafe Collateral & Brand Touchpoints',
-        content: `Extended the visual identity across takeaway cups, retail menus, merchandise, packaging tape, and digital social templates.`,
-        deliverables: [
-          'Primary Wordmark & Secondary Monogram Assets (SVG / EPS)',
-          'Modular Coffee Packaging Label Templates',
-          'Cafe Menu & Takeaway Cup Collateral',
-          'Brand Identity Guidelines Book'
-        ]
-      },
-      {
-        type: 'outcome',
-        tag: '07 // FINAL BRAND',
-        title: 'Brand Identity Summary',
-        content: `Solstice Specialty Coffee showcases a complete end-to-end identity system that feels elevated, timeless, and thoughtfully crafted across both digital and physical touchpoints.`
-      }
-    ]
-  },
-
-  pulse: {
-    id: 'pulse',
-    slug: 'pulse-healthcare',
-    category: 'Social Media',
-    categoryCode: '04 — SOCIAL MEDIA & GRAPHIC',
-    status: 'SELF-INITIATED',
-    title: 'Pulse Healthcare Campaign',
-    subtitle: 'Educational social media design system, multi-slide carousel frameworks, and visual assets designed to communicate health topics clearly.',
-    meta: {
-      role: 'Social Media & Graphic Designer',
-      type: 'Campaign Design Project',
-      timeline: '2 Weeks',
-      discipline: 'Social Media Design & Visual Content',
-      tools: 'Figma, Adobe Illustrator, Photoshop',
-      deliverables: 'Instagram Carousel Decks, Infographics, Story Templates'
-    },
-    heroImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80',
+    heroImage: '/assets/images/framer-portfolio/job-finder_img_1.png',
     accentColor: '#2FA79B',
+    overview: 'Job Finder is a mobile app concept that makes it easier for users to search and apply for jobs. It offers a simple, clean interface with easy navigation, detailed filters, and organized listings.',
+    visualShowcase: [
+      {
+        tag: '01 // MOBILE SCREEN SEQUENCE',
+        title: 'Key Application Screens',
+        desc: 'Three core screen flows designed to eliminate friction in discovery, filtering, and job application.',
+        layout: 'trio',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/job-finder_img_1.png',
+            label: '01 — JOB LISTING & DETAILS',
+            caption: 'Primary search feed with company badges and salary indicators'
+          },
+          {
+            src: '/assets/images/framer-portfolio/job-finder_img_2.png',
+            label: '02 — FILTER SYSTEM',
+            caption: 'Granular filter drawer for location, experience level, and role type'
+          },
+          {
+            src: '/assets/images/framer-portfolio/job-finder_img_3.png',
+            label: '03 — APPLICATION CONFIRMATION',
+            caption: '1-tap resume submission flow with status tracking'
+          }
+        ]
+      }
+    ],
     sections: [
       {
-        type: 'goal',
-        tag: '01 // BUSINESS & CONTENT GOAL',
-        title: 'Making Health Information Clear and Approachable',
-        content: `Complex health topics are frequently presented in dry, clinical formats or sensationalized clickbait. Pulse was conceived to demonstrate how structured social media design and clear visual hierarchy can make wellness education engaging, credible, and easy to digest.`
-      },
-      {
-        type: 'content_direction',
-        tag: '02 // CONTENT DIRECTION & HOOK STRATEGY',
-        title: 'Structured Multi-Slide Carousel Architecture',
-        content: `Established a consistent 4-part carousel structure to guide readers smoothly from discovery to takeaway:`,
-        bullets: [
-          '<strong>Slide 1 (The Hook):</strong> High-contrast typography with a clear question or topic statement.',
-          '<strong>Slides 2–5 (The Core Framework):</strong> Bite-sized insights, clean vector diagrams, and simplified explanations.',
-          '<strong>Slide 6 (Actionable Summary):</strong> Key takeaways formatted for effortless screenshotting and bookmarking.',
-          '<strong>Slide 7 (Discussion / Share):</strong> Friendly call-to-action inviting audience questions and saves.'
-        ]
-      },
-      {
-        type: 'visual_system',
-        tag: '03 // VISUAL SYSTEM & TYPOGRAPHY',
-        title: 'Calming Palettes & Editorial Clarity',
-        content: `Developed a cohesive visual identity featuring clean sans-serif typography, calming restorative greens, and warm accent tones.`,
-        palette: [
-          { name: 'Restorative Teal', hex: '#2FA79B' },
-          { name: 'Warm Amber Alert', hex: '#E8862E' },
-          { name: 'Deep Slate Base', hex: '#0F1216' },
-          { name: 'Paper White', hex: '#F4EFEB' }
-        ]
-      },
-      {
-        type: 'carousel',
-        tag: '04 // CAROUSEL DESIGN & INFOGRAPHICS',
-        title: 'Modular Multi-Slide Template Suite',
-        content: `Constructed reusable Figma auto-layout templates allowing rapid creation of educational carousels with consistent margins, typographic scale, and icon styling.`
-      },
-      {
-        type: 'ad_creatives',
-        tag: '05 // SOCIAL ASSETS & DELIVERABLES',
-        title: 'Multi-Format Social Asset Suite',
-        content: `Produced an integrated suite of feed posts, story templates, and promotional banner formats for Instagram and LinkedIn.`,
-        deliverables: [
-          'Modular 10-Slide Carousel Template Kit (1:1 and 4:5 ratios)',
-          'High-Contrast Story & Reel Cover Layouts (9:16 ratio)',
-          'Custom Vector Health & Wellness Iconography',
-          'Figma Social Media Asset Library with Component Variants'
-        ]
-      },
-      {
         type: 'outcome',
-        tag: '06 // FINAL CONTENT SYSTEM',
-        title: 'Design Summary',
-        content: `Pulse Healthcare demonstrates how clean graphic design principles and thoughtful layout hierarchy can elevate social media content into authoritative, shareable visual communication.`
+        tag: '02 // KEY LEARNINGS',
+        title: 'Layout Mastery & Guidance',
+        content: `“Design is not just how it looks — it’s how clearly it guides.” By working on this project, I refined my skills for creating transparent user-centered flows and enhanced visual continuity while balancing dense data with clean whitespace.`
       }
     ]
   },
 
-  veloce: {
-    id: 'veloce',
-    slug: 'veloce',
-    category: 'Social Media',
-    categoryCode: '05 — MARKETING & AD CREATIVE',
-    status: 'CONCEPT PROJECT',
-    title: 'Veloce Performance Ad Kit',
-    subtitle: 'Promotional marketing assets and high-impact social ad creatives designed for modern digital campaigns and product drops.',
+  'flower-hero': {
+    id: 'flower-hero',
+    slug: 'flower-hero',
+    prevSlug: 'job-finder',
+    nextSlug: 'red-bus',
+    category: 'UI/UX Design',
+    categoryCode: '03 — LANDING PAGE UI',
+    status: 'UI EXPLORATION',
+    title: 'Flower Hero Page Design',
+    subtitle: 'A visually appealing landing section for a flower shop app, crafted to capture attention instantly through elegance and warm aesthetics.',
     meta: {
-      role: 'Marketing & Graphic Designer',
-      type: 'Ad Creative Concept',
-      timeline: '2 Weeks',
-      discipline: 'Marketing Ad Design & Social Creatives',
-      tools: 'Adobe Photoshop, Illustrator, Figma',
-      deliverables: 'Multi-Ratio Social Ads, Story Creatives, Display Banners'
+      role: 'UI/UX Designer',
+      type: 'Landing Page UI',
+      timeline: 'Design Sprint',
+      discipline: 'UI/UX Design',
+      tools: 'Figma',
+      deliverables: 'Hero Banner Layout, Typography Hierarchy, CTA Strategy'
     },
-    heroImage: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&auto=format&fit=crop&q=80',
+    heroImage: '/assets/images/framer-portfolio/flower-hero_img_0.png',
     accentColor: '#E8862E',
+    overview: 'The design highlights elegance, seasonal offerings, and easy navigation — giving users a warm and welcoming first impression. The focus was on aesthetics, typography, and hierarchy to ensure the brand’s vibe blooms at first glance.',
+    visualShowcase: [
+      {
+        tag: '01 // HERO DISPLAY',
+        title: 'Landing Section Composition',
+        desc: 'Centered hero mockup with generous whitespace, soft pink background (#FCECEC), and clear call-to-action.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_0.png',
+            label: '01 — HERO COMPOSITION',
+            caption: 'Landing banner with soft shadow styling and Poppins + Playfair Display typography'
+          }
+        ]
+      },
+      {
+        tag: '02 // PRODUCT SHOWCASE',
+        title: 'Curated Floral Offerings',
+        desc: 'Individual product showcase cards designed for visual warmth and clean scanning.',
+        layout: 'quad',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_1.jpg',
+            label: '02 — PRODUCT CARD 1',
+            caption: 'Fresh rose bouquet presentation'
+          },
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_2.jpg',
+            label: '03 — PRODUCT CARD 2',
+            caption: 'Mixed seasonal arrangement'
+          },
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_3.jpg',
+            label: '04 — PRODUCT CARD 3',
+            caption: 'Curated gift packaging'
+          },
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_4.jpg',
+            label: '05 — PRODUCT CARD 4',
+            caption: 'Floral accents'
+          }
+        ]
+      },
+      {
+        tag: '03 // VISUAL SPECIFICATIONS',
+        title: 'Typography Pairing & Palette Standards',
+        desc: 'Technical visual breakdown including color codes and spacing principles.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_5.png',
+            label: '06 — VISUAL DETAILS',
+            caption: 'Design token specs, colors & fonts'
+          },
+          {
+            src: '/assets/images/framer-portfolio/flower-hero_img_6.png',
+            label: '07 — FOOTER INTERACTION',
+            caption: 'Secondary footer and social channels'
+          }
+        ]
+      }
+    ],
     sections: [
       {
-        type: 'goal',
-        tag: '01 // CAMPAIGN OBJECTIVE',
-        title: 'Creating High-Impact Promotional Visuals',
-        content: `Designed a performance-oriented digital advertising kit for an athletic apparel product launch. The goal was to develop striking ad layouts that capture attention in fast-scrolling feeds while maintaining a clean, premium brand aesthetic.`
-      },
-      {
-        type: 'content_direction',
-        tag: '02 // VISUAL HIERARCHY & HOOK FORMULA',
-        title: '3-Tier Ad Structure for Instant Comprehension',
-        content: `Each ad variation was built upon a clear 3-tier visual hierarchy to deliver the core message within 2 seconds of viewing:`,
-        bullets: [
-          '<strong>Visual Anchor:</strong> Dynamic product imagery positioned with strong diagonal motion lines.',
-          '<strong>Bold Value Proposition:</strong> Concise, punchy headline in high-contrast monospaced badge styling.',
-          '<strong>Frictionless CTA:</strong> Prominent call-to-action button with clear next-step direction.'
-        ]
-      },
-      {
-        type: 'visual_system',
-        tag: '03 // COLOR & TYPOGRAPHY SYSTEM',
-        title: 'High-Energy Contrast Palette',
-        content: `Utilized an energetic amber and charcoal palette with bold athletic typography to communicate speed, technical engineering, and durability.`,
-        palette: [
-          { name: 'Velocity Amber', hex: '#E8862E' },
-          { name: 'Asphalt Black', hex: '#0B0D0F' },
-          { name: 'Pure White Text', hex: '#FFFFFF' },
-          { name: 'Teal Accent Tag', hex: '#2FA79B' }
-        ]
-      },
-      {
-        type: 'ad_creatives',
-        tag: '04 // MULTI-RATIO ASSET MATRIX',
-        title: 'Comprehensive Asset Deliverables',
-        content: `Created coordinated ad sets across all standard social and display aspect ratios for seamless omnichannel deployment.`,
-        deliverables: [
-          '1:1 Square Feed Ads for Instagram and Facebook',
-          '9:16 Full-Screen Vertical Creatives for Stories and TikTok',
-          '16:9 Landscape Promo Banners for Web and Desktop',
-          'Responsive Component Templates in Figma'
-        ]
-      },
-      {
         type: 'outcome',
-        tag: '05 // FINAL CONTENT SYSTEM',
-        title: 'Design Summary',
-        content: `The Veloce Ad Kit highlights how strategic graphic design, strong typographic structure, and dynamic product framing can drive engagement in digital marketing campaigns.`
+        tag: '04 // PHILOSOPHY',
+        title: 'Quiet Elegance in UI',
+        content: `“Like flowers, good design doesn’t need to shout — it quietly makes everything more beautiful.”`
       }
     ]
   },
 
-  aether: {
-    id: 'aether',
-    slug: 'aether',
-    category: 'Graphic Design',
-    categoryCode: '06 — LOGO & VECTOR CRAFT',
-    status: 'DESIGN ANTHOLOGY',
-    title: 'Aether Studio Logomarks',
-    subtitle: 'A curated collection of minimalist, geometry-driven logomarks and symbols designed with mathematical proportion and optical balance.',
+  'red-bus': {
+    id: 'red-bus',
+    slug: 'red-bus',
+    prevSlug: 'flower-hero',
+    nextSlug: 'ecommerce-headphone',
+    category: 'UI/UX Design',
+    categoryCode: '04 — APP REDESIGN',
+    status: 'UI EXERCISE',
+    title: 'RedBus — App UI Redesign',
+    subtitle: 'A hands-on mobile UI exercise recreating and refining a real-world booking interface with focus on cleaner hierarchy and usability.',
     meta: {
-      role: 'Graphic & Logo Designer',
-      type: 'Anthology / Collection',
-      timeline: 'Ongoing Anthology',
-      discipline: 'Logo Design & Vector Geometry',
-      tools: 'Adobe Illustrator, Vector Grid, Glyphs',
-      deliverables: 'Vector Logomarks, Optical Grid Blueprints, Favicon Specs'
+      role: 'UI/UX Designer',
+      type: 'Mobile App Redesign',
+      timeline: '4–5 Days',
+      discipline: 'UI/UX Design',
+      tools: 'Figma',
+      deliverables: 'Multi-Screen Mobile Flow, Booking Grid, Design System'
     },
-    heroImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80',
-    accentColor: '#EEEAE2',
+    heroImage: '/assets/images/framer-portfolio/red-bus_img_1.png',
+    accentColor: '#E8862E',
+    overview: 'This RedBus Redesign was a personal UI exercise project wherein I remade the interface to hone my design execution. Attention was paid to enhancing structure, visual hierarchy, and general consistency across multiple interconnected screens.',
+    visualShowcase: [
+      {
+        tag: '01 // DISCOVERY & SEARCH FLOW',
+        title: 'Route Search & Operator Listings',
+        desc: 'Streamlined date picker, route selector, and bus operator cards with departure filters.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/red-bus_img_1.png',
+            label: '01 — ROUTE SEARCH',
+            caption: 'Origin, destination, and departure date selection'
+          },
+          {
+            src: '/assets/images/framer-portfolio/red-bus_img_2.png',
+            label: '02 — OPERATOR LISTINGS',
+            caption: 'Bus operator list with timing, fare and rating tags'
+          }
+        ]
+      },
+      {
+        tag: '02 // BOOKING & SEAT SELECTION',
+        title: 'Seat Grid & Boarding Points',
+        desc: 'Ergonomic seat selection layout with clear berth indicators and pickup location mapping.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/red-bus_img_3.png',
+            label: '03 — SEAT SELECTION',
+            caption: 'Upper / lower deck layout with price tiers'
+          },
+          {
+            src: '/assets/images/framer-portfolio/red-bus_img_4.png',
+            label: '04 — BOARDING POINTS',
+            caption: 'Pickup and dropping points selection'
+          }
+        ]
+      },
+      {
+        tag: '03 // PASSENGER DETAILS & CHECKOUT',
+        title: 'Passenger Information & Confirmation',
+        desc: 'Frictionless passenger form and instant digital ticket confirmation screen.',
+        layout: 'duo',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/red-bus_img_5.png',
+            label: '05 — PASSENGER DETAILS',
+            caption: 'Contact info, seat allocation, and payment breakdown'
+          },
+          {
+            src: '/assets/images/framer-portfolio/red-bus_img_6.png',
+            label: '06 — TICKET CONFIRMATION',
+            caption: 'Digital ticket confirmation with QR code pass'
+          }
+        ]
+      }
+    ],
     sections: [
       {
-        type: 'brief',
-        tag: '01 // DESIGN PHILOSOPHY',
-        title: 'The Craft of Reduction and Geometric Precision',
-        content: `A logomark is the purest distillation of visual identity. It must communicate character, memorability, and balance whether displayed at 16x16 pixels as a browser favicon or scaled to large architectural signage. The Aether collection explores the intersection of mathematical grids, negative space, and semantic meaning.`
-      },
-      {
-        type: 'concept',
-        tag: '02 // GRID SYSTEMS & GEOMETRY',
-        title: 'Constructive Optical Grids',
-        content: `Every symbol in the collection is constructed from fundamental geometric primitives—concentric circles, isometric diagonals, and balanced line weights—tested for optical balance rather than purely algorithmic snapping.`,
-        bullets: [
-          '<strong>Monoline Consistency:</strong> Unified stroke weights calibrated to remain crisp across all display densities.',
-          '<strong>Negative Space Harmony:</strong> Intentional counter-spaces that allow the marks to breathe on both dark and light canvases.',
-          '<strong>Contrast Verification:</strong> Every mark is tested in pure monochrome before color exploration.',
-          '<strong>Silhouette Recognition:</strong> Instantly identifiable outlines when blurred or viewed from a distance.'
-        ]
-      },
-      {
-        type: 'visual_direction',
-        tag: '03 // SYMBOL BREAKDOWN & MEANING',
-        title: 'Featured Logomarks',
-        content: `A detailed overview of four featured marks from the anthology:`,
-        diagram: [
-          { step: '01. TRIAD', desc: 'An equilateral triangle interlocking with an internal sphere — representing dynamic balance and structural stability.' },
-          { step: '02. NEXUS', desc: 'A rounded geometric squircle with a centered nucleus — representing connectivity, network nodes, and core security.' },
-          { step: '03. INFINITY', desc: 'A continuous ribbon geometry with a focal orbit — representing iteration, continuous delivery, and momentum.' },
-          { step: '04. HEXA', desc: 'An isometric faceted hexagon with perspective axes — representing spatial structure and modular architecture.' }
-        ]
-      },
-      {
-        type: 'design_exploration',
-        tag: '04 // SCALABILITY & APPLICATION TESTING',
-        title: 'Testing Across Digital & Print Media',
-        content: `Each mark undergoes scalability checks: 16px sub-pixel favicon rendering, dark/light contrast verification, and vector lockup tests with sans-serif and monospace typography.`,
-        deliverables: [
-          'Master Vector Construction Blueprints (SVG / EPS)',
-          'Responsive Lockups (Horizontal, Stacked, Icon-Only)',
-          'Monochrome & Dark Mode Contrast Verification Files',
-          'Export Matrix for Web Favicons and App Icons'
-        ]
-      },
-      {
         type: 'outcome',
-        tag: '05 // APPLICATIONS & TAKEAWAYS',
-        title: 'Design Summary',
-        content: `The Aether Logomarks collection showcases a dedicated approach to minimalist symbol design, demonstrating how clean geometric foundations produce versatile, memorable brand marks.`
+        tag: '04 // KEY LEARNINGS',
+        title: 'Execution & Detail Orientation',
+        content: `“Every pixel I recreated brought me a step closer to mastering real-world design execution.” By reconstructing this actual-world UI, I honed my detail orientation, refined layout competency, and learned more about preserving hierarchy across multi-screen booking flows.`
       }
     ]
+  },
+
+  'ecommerce-headphone': {
+    id: 'ecommerce-headphone',
+    slug: 'ecommerce-headphone',
+    prevSlug: 'red-bus',
+    nextSlug: 'portfolio-website',
+    category: 'UI/UX Design',
+    categoryCode: '05 — E-COMMERCE UI',
+    status: 'UI REDESIGN',
+    title: 'E-Commerce Headphone Redesign',
+    subtitle: 'A design UI remake of an audio product landing page prioritizing bold typography, modern structure, and product showcasing.',
+    meta: {
+      role: 'UI/UX Designer',
+      type: 'E-Commerce Web UI',
+      timeline: '1.5 Days',
+      discipline: 'UI/UX Design',
+      tools: 'Figma',
+      deliverables: 'Product Showcase Stage, Feature Breakdown, Purchase CTA'
+    },
+    heroImage: '/assets/images/framer-portfolio/ecommerce-headphone_img_0.png',
+    accentColor: '#E8862E',
+    overview: 'The challenge was to improve the shopping experience through clean aesthetics, bold typography, and contemporary layout structures — keeping product showcasing and usability at the forefront.',
+    visualShowcase: [
+      {
+        tag: '01 // PRODUCT HERO PRESENTATION',
+        title: 'Landing Page Hero Stage',
+        desc: 'High-impact product visual integrated with technical specification highlights and bold purchase trigger.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/ecommerce-headphone_img_0.png',
+            label: '01 — PRODUCT HERO',
+            caption: 'Hero product presentation with bold typography and purchase CTA'
+          }
+        ]
+      },
+      {
+        tag: '02 // FEATURES & SOUND SPECIFICATIONS',
+        title: 'Feature Breakdown & Specifications',
+        desc: 'Technical acoustic specs, battery life callouts, and clean e-commerce checkout flow.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/ecommerce-headphone_img_1.png',
+            label: '02 — FEATURE BREAKDOWN',
+            caption: 'Detailed feature showcase with ergonomic acoustic specifications'
+          }
+        ]
+      }
+    ],
+    sections: [
+      {
+        type: 'outcome',
+        tag: '03 // SUMMARY',
+        title: 'Connecting & Converting',
+        content: `“Good design isn’t just what it looks like — it’s how it connects, communicates, and converts.” Through the redesign, I explored clean composition of layouts with an emphasis on user engagement and simplicity.`
+      }
+    ]
+  },
+
+  // Alias for backward compatibility
+  'framer-portfolio': {
+    id: 'framer-portfolio',
+    slug: 'portfolio-website',
+    prevSlug: 'ecommerce-headphone',
+    nextSlug: 'pearls-eye-photography',
+    category: 'UI/UX Design',
+    categoryCode: '01 — FEATURED PROJECT',
+    status: 'PERSONAL PORTFOLIO',
+    title: 'Portfolio Website',
+    subtitle: 'A personal UI/UX portfolio designed to communicate my design skills, selected work, and design approach through an interactive digital experience.',
+    meta: {
+      role: 'UI/UX Designer',
+      type: 'Personal Portfolio',
+      timeline: 'Concept to Framer',
+      discipline: 'UI/UX Design',
+      tools: 'Figma, Framer',
+      deliverables: 'Personal Brand, Responsive Web Experience, Case Studies'
+    },
+    heroImage: '/assets/images/framer-portfolio/desktop_hero.webp',
+    accentColor: '#E8862E',
+    overview: 'The project was designed as a personal UI/UX portfolio to present my design skills, selected work, tools and approach in a clear and visually engaging way.',
+    visualShowcase: [
+      {
+        tag: '01 // HERO & BRAND POSITIONING',
+        title: 'Desktop Introduction & Identity',
+        desc: 'Bold headline statement, role definition, and direct access to View CV with dark glass aesthetic.',
+        layout: 'full',
+        images: [
+          {
+            src: '/assets/images/framer-portfolio/desktop_hero.webp',
+            label: '01 — HERO DISPLAY',
+            caption: 'Desktop Hero view — Role positioning, headline typography and CTA buttons'
+          }
+        ]
+      }
+    ],
+    sections: []
   }
 };
 

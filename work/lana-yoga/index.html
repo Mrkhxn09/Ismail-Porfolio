@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Lana Yoga — Website Design Case Study | Ismail Khan</title>
+  <meta name="description" content="A freelance website design case study by Ismail Khan. Designing a clear, welcoming digital presence for Lana Yoga — a yoga business offering classes, memberships, and international retreats.">
+  <meta name="keywords" content="Lana Yoga, Website Design, Freelance Web Design, UI Design, Yoga Website, Ismail Khan, Case Study">
+  <meta name="author" content="Ismail Khan">
+  <link rel="canonical" href="https://ismail-porfolio.vercel.app/work/lana-yoga/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ismail-porfolio.vercel.app/work/lana-yoga/">
+  <meta property="og:site_name" content="Ismail Khan Portfolio">
+  <meta property="og:title" content="Lana Yoga — Website Design Case Study | Ismail Khan">
+  <meta property="og:description" content="A freelance website design project presenting Lana Yoga's classes, teaching approach, and offerings through a clear and welcoming digital experience.">
+  <meta property="og:image" content="https://ismail-porfolio.vercel.app/assets/images/lana-yoga/hero.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ismail-porfolio.vercel.app/work/lana-yoga/">
+  <meta name="twitter:title" content="Lana Yoga — Website Design Case Study | Ismail Khan">
+  <meta name="twitter:description" content="A freelance website design project presenting Lana Yoga's classes, teaching approach, and offerings through a clear and welcoming digital experience.">
+  <meta name="twitter:image" content="https://ismail-porfolio.vercel.app/assets/images/lana-yoga/hero.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Lana Yoga — Website Design",
+    "headline": "Lana Yoga — Website Design Case Study",
+    "description": "A freelance website design project presenting Lana Yoga's classes, teaching approach, and offerings through a clear and welcoming digital experience.",
+    "author": {
+      "@type": "Person",
+      "name": "Ismail Khan",
+      "url": "https://ismail-porfolio.vercel.app/"
+    },
+    "genre": "Website Design",
+    "keywords": "Website Design, Freelance Design, Yoga Website, UI Design, Web Design"
+  }
+  </script>
+
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <style>
+    /* Lana Yoga case study accent overrides */
+    .lana-accent { color: #7A9E7E; }
+    .lana-border { border-color: #7A9E7E !important; }
+    .csv-hero-glow { background: radial-gradient(circle at center, rgba(122, 158, 126, 0.2) 0%, transparent 70%) !important; }
+
+    /* Comparison grid */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .comparison-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .comparison-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 4px;
+    }
+    .comparison-img-wrap {
+      border: 1px solid rgba(238,234,226,0.08);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .comparison-img-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Structure breakdown */
+    .structure-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .structure-card {
+      background: rgba(20, 23, 28, 0.5);
+      border: 1px solid rgba(238,234,226,0.08);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .structure-card-num {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: #7A9E7E;
+      letter-spacing: 0.1em;
+    }
+    .structure-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--paper);
+    }
+    .structure-card-desc {
+      font-size: 0.78rem;
+      color: rgba(238,234,226,0.55);
+      line-height: 1.5;
+    }
+
+    /* Live website preview */
+    .lana-preview-frame {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(238,234,226,0.1);
+      background: #1a1e23;
+      margin-top: 16px;
+    }
+    .lana-preview-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: rgba(20,23,28,0.9);
+      border-bottom: 1px solid rgba(238,234,226,0.06);
+    }
+    .lana-preview-dots {
+      display: flex;
+      gap: 5px;
+    }
+    .lana-preview-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .lana-dot-r { background: #FF5F57; }
+    .lana-dot-y { background: #FFBD2E; }
+    .lana-dot-g { background: #28C840; }
+    .lana-preview-url {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: rgba(238,234,226,0.4);
+      letter-spacing: 0.05em;
+    }
+    .lana-preview-img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Learning items */
+    .learning-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .learning-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: rgba(20,23,28,0.4);
+      border: 1px solid rgba(238,234,226,0.07);
+      border-radius: 8px;
+    }
+    .learning-num {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: #7A9E7E;
+      min-width: 28px;
+      padding-top: 2px;
+    }
+    .learning-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(238,234,226,0.75);
+    }
+    .learning-text strong { color: var(--paper); }
+
+    /* Asset placeholder */
+    .asset-placeholder {
+      border: 1px dashed rgba(238,234,226,0.15);
+      border-radius: 8px;
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(20,23,28,0.3);
+    }
+    .asset-placeholder p {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgba(238,234,226,0.3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    @media (max-width: 640px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+      .structure-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body class="case-study-page">
+
+  <!-- Minimal Scroll Progress -->
+  <div id="globalScrollProgress" class="global-scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Background -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Top Navigation -->
+  <header class="nav" style="position: sticky; top: 0; background: rgba(13,14,16,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(238,234,226,0.06);">
+    <a href="../../#work" class="logo" aria-label="Back to Portfolio">IK.</a>
+    <nav aria-label="Breadcrumb Navigation">
+      <a href="../../#work" style="display: inline-flex; align-items: center; gap: 6px;">
+        <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Work</span>
+      </a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+    <div class="clock mono" id="clock">00:00:00</div>
+  </header>
+
+  <!-- Main Case Study Content -->
+  <main class="standalone-case-main" style="max-width: 1080px; margin: 0 auto; padding: 60px 24px 100px;">
+    
+    <!-- ═══ HERO ═══ -->
+    <article class="csv-hero">
+      <div class="csv-badges-wrap">
+        <span class="csv-hero-badge mono">FREELANCE WEBSITE DESIGN</span>
+        <span class="csv-status-badge mono">CLIENT PROJECT</span>
+      </div>
+      <h1 class="csv-hero-title">Lana Yoga — Website Design</h1>
+      <p class="csv-hero-subtitle">A freelance website design project focused on presenting Lana Yoga's classes, teaching approach, and offerings through a clear and welcoming digital experience.</p>
+
+      <div class="csv-meta-strip">
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">ROLE</span>
+          <span class="csv-meta-val">Website Designer</span>
+        </div>
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">TYPE</span>
+          <span class="csv-meta-val">Freelance Client Project</span>
+        </div>
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">DISCIPLINE</span>
+          <span class="csv-meta-val">Website Design</span>
+        </div>
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">LIVE SITE</span>
+          <span class="csv-meta-val">
+            <a href="https://lana-yoga.com/" target="_blank" rel="noopener noreferrer" style="color: #7A9E7E; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+              lana-yoga.com
+              <svg viewBox="0 0 24 24" style="width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <!-- Hero Image: Presentation Hero Graphic -->
+      <div class="csv-hero-frame">
+        <img src="/assets/images/lana-yoga/hero.jpg" alt="Lana Yoga — Therapeutic Yoga Website Design" class="csv-hero-img" loading="eager" decoding="async">
+        <div class="csv-hero-glow"></div>
+      </div>
+    </article>
+
+    <div class="csv-sections-container">
+
+      <!-- ═══ 01: OVERVIEW ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">01 // PROJECT OVERVIEW</span>
+          <h2 class="csv-sec-title">A Website for a Real Yoga Business</h2>
+        </div>
+        <p class="csv-sec-desc">
+          This was a freelance project to design a website for Lana Yoga — a yoga business led by instructor Lana. The website was intended to communicate her teaching approach, present her class offerings, explain membership options, and guide visitors toward taking the next step in their practice.
+        </p>
+        <p class="csv-sec-desc" style="margin-top: 12px;">
+          The design needed to feel calm, approachable, and credible — consistent with the overall tone of a wellness and yoga business. The goal was to give visitors a clear sense of who Lana is, what she offers, and how to get started.
+        </p>
+        <div class="csv-overview-box" style="margin-top: 24px; padding: 24px; background: rgba(20,23,28,0.5); border-left: 2px solid #7A9E7E; border-radius: 0 8px 8px 0;">
+          <span class="mono" style="font-size: 0.7rem; color: #7A9E7E; letter-spacing: 0.1em; display: block; margin-bottom: 6px;">CLIENT CONTEXT</span>
+          <p style="font-size: 0.95rem; line-height: 1.6; color: var(--paper); margin: 0;">
+            Lana Yoga is a yoga studio offering live and on-demand classes, memberships, and international retreats. The site needed to serve multiple audiences — people new to yoga, those exploring memberships, and visitors interested in retreats — all within a single coherent experience.
+          </p>
+        </div>
+      </section>
+
+      <!-- ═══ 02: DESIGN GOALS ═══ -->
+      <section class="csv-section goals">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">02 // DESIGN GOALS</span>
+          <h2 class="csv-sec-title">What the Design Was Asked to Achieve</h2>
+        </div>
+        <p class="csv-sec-desc">These were the design objectives guiding the work — focused on presentation and communication, not assumed outcomes:</p>
+        <ul class="csv-bullet-list">
+          <li><strong>Present yoga offerings and class information clearly.</strong> Visitors should quickly understand what types of classes are available, the style of practice, and how to access them.</li>
+          <li><strong>Communicate the instructor's approach and personality.</strong> The website needed to introduce Lana as a teacher — her values, her style, and why someone would want to learn from her.</li>
+          <li><strong>Organise information so visitors can understand their options.</strong> Between live classes, on-demand content, memberships, and retreats, the structure needed to guide rather than overwhelm.</li>
+          <li><strong>Make membership and booking-related calls to action easy to identify.</strong> Sign-up prompts and next steps needed to be visible and accessible at the right moments in the page flow.</li>
+          <li><strong>Maintain a consistent visual experience across the website.</strong> Typography, colour, spacing, and component style needed to feel unified from page to page.</li>
+        </ul>
+      </section>
+
+      <!-- ═══ 03: WEBSITE STRUCTURE ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">03 // WEBSITE STRUCTURE</span>
+          <h2 class="csv-sec-title">Major Content Areas</h2>
+        </div>
+        <p class="csv-sec-desc">The website is organised across several distinct content areas, each serving a different visitor intent:</p>
+
+        <div class="structure-grid">
+          <div class="structure-card">
+            <span class="structure-card-num">01 —</span>
+            <span class="structure-card-title">Homepage</span>
+            <span class="structure-card-desc">Primary introduction, hero section, community messaging, instructor overview, class highlights, and testimonials.</span>
+          </div>
+          <div class="structure-card">
+            <span class="structure-card-num">02 —</span>
+            <span class="structure-card-title">Offerings</span>
+            <span class="structure-card-desc">Yoga class listings — including Beginner, Hatha Yoga, Prenatal, and Restorative — with schedule and booking access.</span>
+          </div>
+          <div class="structure-card">
+            <span class="structure-card-num">03 —</span>
+            <span class="structure-card-title">Pain Free Pass</span>
+            <span class="structure-card-desc">Membership area presenting the chronic pain management programme, live + on-demand content, pricing, and sign-up.</span>
+          </div>
+          <div class="structure-card">
+            <span class="structure-card-num">04 —</span>
+            <span class="structure-card-title">International Retreats</span>
+            <span class="structure-card-desc">Dedicated page for retreat programmes — locations, format, and how to apply or enquire.</span>
+          </div>
+          <div class="structure-card">
+            <span class="structure-card-num">05 —</span>
+            <span class="structure-card-title">Free Classes</span>
+            <span class="structure-card-desc">Wednesday and Friday free morning classes — schedule, class grid, and video content access.</span>
+          </div>
+          <div class="structure-card">
+            <span class="structure-card-num">06 —</span>
+            <span class="structure-card-title">Contact & FAQ</span>
+            <span class="structure-card-desc">Frequently asked questions section and contact access, with footer navigation across all sections.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 04: VISUAL DIRECTION ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">04 // VISUAL DIRECTION</span>
+          <h2 class="csv-sec-title">Colour, Typography & Tone</h2>
+        </div>
+        <p class="csv-sec-desc">The visual direction of the website reflects the brand's natural, calm, and grounded identity. The palette draws from earthy and muted tones — sage greens, warm beiges, and soft backgrounds — to communicate stillness and trust without being clinical or corporate.</p>
+        <p class="csv-sec-desc" style="margin-top: 10px;">Typography supports legibility and warmth. The combination of a structured sans-serif for headings and a readable body font keeps the experience approachable. The overall visual tone is intentionally unhurried.</p>
+
+        <div class="csv-palette-row" style="margin-top: 20px;">
+          <div class="csv-swatch-card">
+            <span class="csv-swatch-pill" style="background:#7A9E7E"></span>
+            <span class="csv-swatch-name">Sage Green</span>
+            <span class="csv-swatch-hex mono">#7A9E7E</span>
+          </div>
+          <div class="csv-swatch-card">
+            <span class="csv-swatch-pill" style="background:#A8B89A"></span>
+            <span class="csv-swatch-name">Muted Fern</span>
+            <span class="csv-swatch-hex mono">#A8B89A</span>
+          </div>
+          <div class="csv-swatch-card">
+            <span class="csv-swatch-pill" style="background:#F5F0E8"></span>
+            <span class="csv-swatch-name">Warm Linen</span>
+            <span class="csv-swatch-hex mono">#F5F0E8</span>
+          </div>
+          <div class="csv-swatch-card">
+            <span class="csv-swatch-pill" style="background:#3D3D35"></span>
+            <span class="csv-swatch-name">Dark Earth</span>
+            <span class="csv-swatch-hex mono">#3D3D35</span>
+          </div>
+          <div class="csv-swatch-card">
+            <span class="csv-swatch-pill" style="background:#E8853A"></span>
+            <span class="csv-swatch-name">Warm Amber CTA</span>
+            <span class="csv-swatch-hex mono">#E8853A</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 05: LIVE WEBSITE SCREENSHOTS ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">05 // LIVE WEBSITE PREVIEW</span>
+          <h2 class="csv-sec-title">Key Pages from the Live Website</h2>
+        </div>
+        <p class="csv-sec-desc">The following screenshots show the live website as it appears to visitors. These pages reflect the final implemented version of the design.</p>
+
+        <!-- Homepage Screenshot -->
+        <div style="margin-top: 28px;">
+          <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #7A9E7E; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Homepage — Full Page</p>
+          <div class="lana-preview-frame">
+            <div class="lana-preview-bar">
+              <div class="lana-preview-dots">
+                <span class="lana-dot-r"></span>
+                <span class="lana-dot-y"></span>
+                <span class="lana-dot-g"></span>
+              </div>
+              <span class="lana-preview-url">lana-yoga.com</span>
+            </div>
+            <img src="/assets/images/lana-yoga/homepage.png" alt="Lana Yoga — Homepage Screenshot" class="lana-preview-img" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- Pain Free Pass Screenshot -->
+        <div style="margin-top: 32px;">
+          <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #7A9E7E; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Pain Free Pass — Membership Page</p>
+          <div class="lana-preview-frame">
+            <div class="lana-preview-bar">
+              <div class="lana-preview-dots">
+                <span class="lana-dot-r"></span>
+                <span class="lana-dot-y"></span>
+                <span class="lana-dot-g"></span>
+              </div>
+              <span class="lana-preview-url">lana-yoga.com/chronic-pain-pass/</span>
+            </div>
+            <img src="/assets/images/lana-yoga/pain-pass.png" alt="Lana Yoga — Pain Free Pass Membership Page" class="lana-preview-img" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <!-- Class Offering Screenshot -->
+        <div style="margin-top: 32px;">
+          <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #7A9E7E; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;">Hatha Yoga — Class Offering Page</p>
+          <div class="lana-preview-frame">
+            <div class="lana-preview-bar">
+              <div class="lana-preview-dots">
+                <span class="lana-dot-r"></span>
+                <span class="lana-dot-y"></span>
+                <span class="lana-dot-g"></span>
+              </div>
+              <span class="lana-preview-url">lana-yoga.com/hatha-class/</span>
+            </div>
+            <img src="/assets/images/lana-yoga/offering.png" alt="Lana Yoga — Hatha Class Offering Page" class="lana-preview-img" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 06: KEY DESIGN DECISIONS ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">06 // KEY DESIGN DECISIONS</span>
+          <h2 class="csv-sec-title">Design Choices Worth Noting</h2>
+        </div>
+        <p class="csv-sec-desc">These are observations and decisions visible in the design that can be discussed with confidence:</p>
+        <ul class="csv-bullet-list">
+          <li><strong>Instructor-forward introduction.</strong> The homepage leads with a strong sense of Lana's identity and community — "Pain Free Community" and the "Welcome Home" section put her personality and mission front and centre before any class listings appear.</li>
+          <li><strong>Navigation by intent.</strong> The main navigation separates Pain Free Pass, Offering, International Retreats, and Contact — each representing a distinct visitor path rather than just a page type. This keeps the structure goal-oriented.</li>
+          <li><strong>Membership page layout.</strong> The Pain Free Pass page uses a visible inclusion list ("What's Included"), pricing comparison, and instructor bio to support the decision. This is structured to reduce friction for someone considering a commitment.</li>
+          <li><strong>Free class accessibility.</strong> The free Wednesday and Friday morning classes are prominently presented with a class schedule — this decision prioritises community trust over immediate conversion.</li>
+          <li><strong>Social proof placement.</strong> Testimonials and transformation stories are placed on the homepage below the class offerings, not buried in a separate section — making them visible during initial browsing.</li>
+          <li><strong>CTA consistency.</strong> Sign-up buttons ("Sign Up For Free Classes", "Join Now", "Book") appear at consistent points throughout the page flow — at natural decision moments rather than only at the top or bottom.</li>
+        </ul>
+      </section>
+
+      <!-- ═══ 07: FROM DESIGN TO LIVE WEBSITE ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">07 // FROM DESIGN TO LIVE WEBSITE</span>
+          <h2 class="csv-sec-title">Design Handoff & Implementation Differences</h2>
+        </div>
+        <p class="csv-sec-desc">
+          The developed website contains some differences compared to the original design submission. This is common in freelance website projects where design and development are handled by separate parties, or where practical implementation constraints shape the final result.
+        </p>
+        <p class="csv-sec-desc" style="margin-top: 10px;">
+          Some observable differences in the live site include: image presentation choices, spacing between certain sections, and the handling of some mobile layouts. These are noted factually — they reflect the realities of a design-to-development workflow.
+        </p>
+        <div class="csv-overview-box" style="margin-top: 20px; padding: 20px 24px; background: rgba(20,23,28,0.5); border-left: 2px solid rgba(238,234,226,0.15); border-radius: 0 8px 8px 0;">
+          <span class="mono" style="font-size: 0.7rem; color: rgba(238,234,226,0.4); letter-spacing: 0.1em; display: block; margin-bottom: 6px;">NOTE ON ORIGINAL FIGMA DESIGNS</span>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: rgba(238,234,226,0.55); margin: 0;">
+            Original Figma design files are available for this project. If you'd like to see a side-by-side comparison of the original design versus the implemented version, those assets can be added here. The section structure is ready for that content.
+          </p>
+        </div>
+        <div class="asset-placeholder" style="margin-top: 16px;">
+          <p>[ Figma design comparison to be added — provide original desktop and mobile Figma exports to populate this section ]</p>
+        </div>
+      </section>
+
+      <!-- ═══ 08: WHAT I LEARNED ═══ -->
+      <section class="csv-section">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono lana-accent">08 // WHAT I LEARNED</span>
+          <h2 class="csv-sec-title">Honest Reflections on the Work</h2>
+        </div>
+        <p class="csv-sec-desc">Working on a real freelance project — with an actual client, a live audience, and a real business — teaches things that practice projects cannot replicate.</p>
+
+        <div class="learning-list">
+          <div class="learning-item">
+            <span class="learning-num">01.</span>
+            <p class="learning-text"><strong>Designing for a real business requires context.</strong> Before making visual decisions, I needed to understand who Lana's audience is, what problem she solves for them, and how people discover the site. Client work forces that discipline.</p>
+          </div>
+          <div class="learning-item">
+            <span class="learning-num">02.</span>
+            <p class="learning-text"><strong>Structure matters as much as aesthetics.</strong> Deciding what information goes where — what appears on the homepage versus a dedicated offering page — has a direct impact on how visitors navigate. Those decisions are design decisions, not just content decisions.</p>
+          </div>
+          <div class="learning-item">
+            <span class="learning-num">03.</span>
+            <p class="learning-text"><strong>The gap between design and implementation is real.</strong> Some details I designed were implemented differently. Understanding why — and how to design in a way that travels well through development — is a skill I'm continuing to develop.</p>
+          </div>
+          <div class="learning-item">
+            <span class="learning-num">04.</span>
+            <p class="learning-text"><strong>Responsive behaviour needs explicit design attention.</strong> Mobile layouts don't automatically follow from desktop designs. Reviewing the live site on mobile revealed areas where more explicit mobile design specifications would have helped.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ 09: FINAL PREVIEW & LINK ═══ -->
+      <section class="csv-section" style="text-align: center;">
+        <div class="csv-section-header" style="text-align: center; align-items: center;">
+          <span class="csv-sec-tag mono lana-accent" style="display: block; text-align: center;">09 // FINAL WEBSITE</span>
+          <h2 class="csv-sec-title" style="text-align: center;">The Finished Website</h2>
+        </div>
+        <p class="csv-sec-desc" style="text-align: center; max-width: 560px; margin: 0 auto 28px;">The website is live and accessible. Visit it to experience the full design in context — including the class schedule, membership page, and mobile experience.</p>
+        <a href="https://lana-yoga.com/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="text-decoration: none; display: inline-flex;">
+          <span>Visit Live Website</span>
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </section>
+
+    </div><!-- /.csv-sections-container -->
+
+    <!-- ═══ NEXT / PREV NAVIGATION ═══ -->
+    <nav class="csv-bottom-nav" style="margin-top: 60px; display: flex; gap: 20px; flex-wrap: wrap;" aria-label="Project Navigation">
+      <a href="../pearls-eye-photography/" class="csv-nav-card prev" style="flex: 1; text-decoration: none;">
+        <span class="csv-nav-dir mono">← PREVIOUS CASE STUDY</span>
+        <span class="csv-nav-sub">Pearl's Eye Photography</span>
+      </a>
+      <a href="../job-finder/" class="csv-nav-card next" style="flex: 1; text-decoration: none;">
+        <span class="csv-nav-dir mono">NEXT CASE STUDY →</span>
+        <span class="csv-nav-sub">Job Finder — Mobile App UI</span>
+      </a>
+    </nav>
+
+    <!-- Bottom Contact Hook -->
+    <div style="text-align: center; margin-top: 80px; padding: 40px 20px; border-top: 1px solid rgba(238,234,226,0.08);">
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--amber); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;">INTERESTED IN WORKING TOGETHER?</p>
+      <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--paper); margin-bottom: 20px;">Let's build your next digital project.</h3>
+      <a href="../../#contact" class="btn-primary" style="text-decoration: none;">
+        <span>Get in Touch</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Live Clock Script -->
+  <script>
+    (function tick() {
+      const el = document.getElementById('clock');
+      if (el) {
+        const d = new Date();
+        el.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()]
+          .map(v => String(v).padStart(2, '0')).join(':');
+      }
+      setTimeout(tick, 1000);
+    })();
+  </script>
+
+  <!-- Scroll Progress -->
+  <script>
+    (function() {
+      const bar = document.getElementById('globalScrollProgress');
+      if (!bar) return;
+      window.addEventListener('scroll', function() {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = h > 0 ? (window.scrollY / h) * 100 : 0;
+        bar.style.width = progress + '%';
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Portfolio Website — UI/UX Case Study | Ismail Khan</title>
+  <meta name="description" content="Portfolio Website UI/UX case study by Ismail Khan. A personal UI/UX portfolio designed to communicate design skills, selected work, and design approach through an interactive digital experience.">
+  <meta name="keywords" content="Portfolio Website, UI/UX Case Study, Framer Portfolio, Figma, Web Design, Personal Branding, Ismail Khan">
+  <meta name="author" content="Ismail Khan">
+  <link rel="canonical" href="https://ismail-porfolio.vercel.app/work/portfolio-website/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ismail-porfolio.vercel.app/work/portfolio-website/">
+  <meta property="og:site_name" content="Ismail Khan Portfolio">
+  <meta property="og:title" content="Portfolio Website — UI/UX Case Study | Ismail Khan">
+  <meta property="og:description" content="A personal UI/UX portfolio designed to communicate design skills, selected work, and design approach through an interactive digital experience.">
+  <meta property="og:image" content="/assets/images/framer-portfolio/desktop_hero.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://ismail-porfolio.vercel.app/work/portfolio-website/">
+  <meta name="twitter:title" content="Portfolio Website — UI/UX Case Study | Ismail Khan">
+  <meta name="twitter:description" content="A personal UI/UX portfolio designed to communicate design skills, selected work, and design approach through an interactive digital experience.">
+  <meta name="twitter:image" content="/assets/images/framer-portfolio/desktop_hero.webp">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Portfolio Website — From Concept to Framer",
+    "headline": "Portfolio Website — UI/UX Case Study",
+    "description": "A personal UI/UX portfolio designed to communicate design skills, selected work, and design approach through an interactive digital experience.",
+    "author": {
+      "@type": "Person",
+      "name": "Ismail Khan",
+      "url": "https://ismail-porfolio.vercel.app/"
+    },
+    "genre": "UI/UX Design",
+    "keywords": "UI/UX Design, Portfolio Design, Framer, Figma, Personal Branding"
+  }
+  </script>
+
+  <!-- Preconnect & Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="case-study-page">
+
+  <!-- Minimal Scroll Progress -->
+  <div id="globalScrollProgress" class="global-scroll-progress" aria-hidden="true"></div>
+
+  <!-- Ambient Background -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="bg-blob bg-blob-1"></div>
+    <div class="bg-blob bg-blob-2"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Top Navigation -->
+  <header class="nav" style="position: sticky; top: 0; background: rgba(13,14,16,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(238,234,226,0.06);">
+    <a href="../../#work" class="logo" aria-label="Back to Portfolio">IK.</a>
+    <nav aria-label="Breadcrumb Navigation">
+      <a href="../../#work" style="display: inline-flex; align-items: center; gap: 6px;">
+        <svg viewBox="0 0 24 24" style="width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Selected Work</span>
+      </a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+    <div class="clock mono" id="clock">00:00:00</div>
+  </header>
+
+  <!-- Main Case Study Content -->
+  <main class="standalone-case-main" style="max-width: 1080px; margin: 0 auto; padding: 60px 24px 100px;">
+    
+    <article class="csv-hero">
+      <div class="csv-badges-wrap">
+        <span class="csv-hero-badge mono">01 — FEATURED PROJECT</span>
+        <span class="csv-status-badge mono">PERSONAL PORTFOLIO</span>
+      </div>
+      <h1 class="csv-hero-title">PORTFOLIO WEBSITE</h1>
+      <p class="csv-hero-subtitle">A personal UI/UX portfolio designed to communicate my design skills, selected work, and design approach through an interactive digital experience.</p>
+
+      <div class="csv-meta-strip">
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">ROLE</span>
+          <span class="csv-meta-val">UI/UX Designer</span>
+        </div>
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">CATEGORY</span>
+          <span class="csv-meta-val">UI/UX Design</span>
+        </div>
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">PROJECT TYPE</span>
+          <span class="csv-meta-val">Personal Portfolio</span>
+        </div>
+        <div class="csv-meta-col">
+          <span class="csv-meta-lbl mono">PLATFORM</span>
+          <span class="csv-meta-val">Figma + Framer</span>
+        </div>
+      </div>
+
+      <div class="cs-screen-wrapper csv-hero-frame" style="margin-top: 24px;">
+        <img src="/assets/images/framer-portfolio/desktop_hero.webp" alt="Previous Framer Portfolio Desktop View" class="csv-hero-img" loading="eager" decoding="async">
+        <div class="cs-screen-label">
+          <span class="cs-screen-num">00 — HERO VIEW</span>
+          <span class="cs-screen-caption">Click to inspect high-resolution screen</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project Overview -->
+    <div class="csv-overview-box" style="margin: 40px 0; padding: 24px; background: rgba(20,23,28,0.5); border-left: 2px solid var(--amber); border-radius: 0 8px 8px 0;">
+      <span class="mono" style="font-size: 0.7rem; color: var(--amber); letter-spacing: 0.1em; display: block; margin-bottom: 6px;">PROJECT OVERVIEW</span>
+      <p style="font-size: 1rem; line-height: 1.6; color: var(--paper); margin: 0;">The project was designed as a personal UI/UX portfolio to present my design skills, selected work, tools and approach in a clear and visually engaging way.</p>
+    </div>
+
+    <!-- 70% Visual Showcase (Using All Real Project Screens) -->
+    <div class="cs-visual-showcase">
+      
+      <!-- Block 01: Hero & Identity -->
+      <div class="cs-visual-block">
+        <div class="cs-block-header">
+          <span class="cs-block-tag">01 // HERO &amp; BRAND POSITIONING</span>
+          <h3 class="cs-block-title">Desktop Introduction &amp; Identity</h3>
+        </div>
+        <p class="cs-block-desc">Bold headline statement, role definition, and direct access to View CV with dark glass aesthetic.</p>
+        <div class="cs-grid-full" style="margin-top: 16px;">
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/desktop_hero.webp" alt="Desktop Hero View" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">01 — HERO DISPLAY</span>
+              <span class="cs-screen-caption">Desktop Hero view — Role positioning, headline typography and CTA buttons</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 02: Skills & About -->
+      <div class="cs-visual-block">
+        <div class="cs-block-header">
+          <span class="cs-block-tag">02 // SKILLS &amp; PHILOSOPHY</span>
+          <h3 class="cs-block-title">Core Capabilities &amp; Design Approach</h3>
+        </div>
+        <p class="cs-block-desc">Visual display of design competencies, workflow tools (Figma, Canva, Framer), and user-centered design philosophy.</p>
+        <div class="cs-grid-duo" style="margin-top: 16px;">
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/desktop_skills_tools.webp" alt="Skills and Tools Section" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">02 — SKILLS &amp; TOOLS</span>
+              <span class="cs-screen-caption">Categorized design competencies &amp; software tools</span>
+            </div>
+          </div>
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/desktop_about.webp" alt="About Me Section" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">03 — ABOUT SECTION</span>
+              <span class="cs-screen-caption">Design philosophy focused on curiosity and empathy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 03: Work Showcase -->
+      <div class="cs-visual-block">
+        <div class="cs-block-header">
+          <span class="cs-block-tag">03 // SELECTED WORK ARCHITECTURE</span>
+          <h3 class="cs-block-title">Project Presentation &amp; Exploration Cards</h3>
+        </div>
+        <p class="cs-block-desc">Showcase grid highlighting Photography portfolio and UI Visual Exploration design sprints.</p>
+        <div class="cs-grid-duo" style="margin-top: 16px;">
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/desktop_project_photography.webp" alt="Photography Case Study Card" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">04 — PHOTOGRAPHY CASE STUDY</span>
+              <span class="cs-screen-caption">Featured Photography project card leading to deep case study</span>
+            </div>
+          </div>
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/desktop_projects_overview.webp" alt="Work Showcase Grid" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">05 — WORK SHOWCASE GRID</span>
+              <span class="cs-screen-caption">Multi-project layout with interactive hover states</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 04: Mobile Experience -->
+      <div class="cs-visual-block">
+        <div class="cs-block-header">
+          <span class="cs-block-tag">04 // MOBILE ADAPTATION</span>
+          <h3 class="cs-block-title">Complete Responsive Mobile Experience</h3>
+        </div>
+        <p class="cs-block-desc">Thumb-friendly navigation, stacked project cards, and legible typography across mobile viewports.</p>
+        <div class="cs-grid-quad" style="margin-top: 16px;">
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/mobile_hero.webp" alt="Mobile Hero" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">06 — MOBILE HERO</span>
+              <span class="cs-screen-caption">Header &amp; positioning</span>
+            </div>
+          </div>
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/mobile_skills.webp" alt="Mobile Skills" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">07 — MOBILE SKILLS</span>
+              <span class="cs-screen-caption">Capabilities list</span>
+            </div>
+          </div>
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/mobile_about.webp" alt="Mobile About" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">08 — MOBILE ABOUT</span>
+              <span class="cs-screen-caption">Personal story</span>
+            </div>
+          </div>
+          <div class="cs-screen-wrapper">
+            <img src="/assets/images/framer-portfolio/mobile_contact.webp" alt="Mobile Footer" loading="lazy" decoding="async">
+            <div class="cs-screen-label">
+              <span class="cs-screen-num">09 — MOBILE FOOTER</span>
+              <span class="cs-screen-caption">Contact &amp; social links</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Supporting Narrative (30% Text) -->
+    <div class="csv-sections-container">
+      
+      <!-- Design Goals -->
+      <section class="csv-section goals">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono">05 // DESIGN GOALS</span>
+          <h2 class="csv-sec-title">Clear Purpose &amp; Factual Objectives</h2>
+        </div>
+        <ul class="csv-bullet-list">
+          <li><strong>Present Myself as a UI/UX Designer:</strong> Clearly communicate my focus on crafting intuitive and impactful digital experiences.</li>
+          <li><strong>Showcase Selected Projects:</strong> Provide dedicated case study breakdowns with structured problem-solving flows.</li>
+          <li><strong>Communicate Design Skills:</strong> Explicitly present competencies in User-Centered Design, Visual Design, Wireframing, UI Design, and Prototyping.</li>
+          <li><strong>Present Tools and Capabilities:</strong> Highlight day-to-day workflow tools including Figma, Canva, and Framer.</li>
+        </ul>
+      </section>
+
+      <!-- Outcome -->
+      <section class="csv-section outcome">
+        <div class="csv-section-header">
+          <span class="csv-sec-tag mono">06 // OUTCOME</span>
+          <h2 class="csv-sec-title">End-to-End Execution</h2>
+        </div>
+        <p class="csv-sec-desc">The final portfolio created a central place to communicate my UI/UX capabilities, present selected projects and establish a visual personal identity.</p>
+        <div class="csv-stats-grid" style="margin-top: 20px;">
+          <div class="csv-stat-card">
+            <span class="csv-stat-val mono">Figma &rarr; Framer</span>
+            <span class="csv-stat-lbl">End-to-End Execution</span>
+          </div>
+          <div class="csv-stat-card">
+            <span class="csv-stat-val mono">2 Case Studies</span>
+            <span class="csv-stat-lbl">Documented Work</span>
+          </div>
+          <div class="csv-stat-card">
+            <span class="csv-stat-val mono">100% Responsive</span>
+            <span class="csv-stat-lbl">Desktop &amp; Mobile</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Working Next / Prev Case Study Navigation -->
+    <nav class="csv-bottom-nav" style="margin-top: 60px; display: flex; gap: 20px; flex-wrap: wrap;" aria-label="Project Navigation">
+      <a href="../ecommerce-headphone/" class="csv-nav-card prev" style="flex: 1; text-decoration: none;">
+        <span class="csv-nav-dir mono">← PREVIOUS PROJECT</span>
+        <span class="csv-nav-sub">E-Commerce Headphone Redesign</span>
+      </a>
+      <a href="../pearls-eye-photography/" class="csv-nav-card next" style="flex: 1; text-decoration: none;">
+        <span class="csv-nav-dir mono">NEXT PROJECT →</span>
+        <span class="csv-nav-sub">Pearl's Eye Photography</span>
+      </a>
+    </nav>
+
+    <!-- Bottom Contact Hook -->
+    <div style="text-align: center; margin-top: 80px; padding: 40px 20px; border-top: 1px solid rgba(238,234,226,0.08);">
+      <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--amber); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px;">INTERESTED IN WORKING TOGETHER?</p>
+      <h3 style="font-family: var(--font-display); font-size: 1.8rem; color: var(--paper); margin-bottom: 20px;">Let's build your next digital product.</h3>
+      <a href="../../#contact" class="btn-primary" style="text-decoration: none;">
+        <span>Get in Touch</span>
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Lightbox Script -->
+  <script src="../../js/case-study-lightbox.js"></script>
+
+  <!-- Live Clock Script -->
+  <script>
+    (function tick() {
+      const el = document.getElementById('clock');
+      if (el) {
+        const d = new Date();
+        el.textContent = [d.getHours(), d.getMinutes(), d.getSeconds()]
+          .map(v => String(v).padStart(2, '0')).join(':');
+      }
+      setTimeout(tick, 1000);
+    })();
+  </script>
+</body>
+</html>

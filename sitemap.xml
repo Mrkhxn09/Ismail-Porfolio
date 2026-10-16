@@ -2,44 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ismail-porfolio.vercel.app/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ismail-porfolio.vercel.app/work/fintra/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://ismail-porfolio.vercel.app/work/portfolio-website/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ismail-porfolio.vercel.app/work/pearls-eye-photography/</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ismail-porfolio.vercel.app/work/apex/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://ismail-porfolio.vercel.app/work/job-finder/</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ismail-porfolio.vercel.app/work/solstice/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://ismail-porfolio.vercel.app/work/flower-hero/</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ismail-porfolio.vercel.app/work/pulse-healthcare/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://ismail-porfolio.vercel.app/work/red-bus/</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ismail-porfolio.vercel.app/work/veloce/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://ismail-porfolio.vercel.app/work/ecommerce-headphone/</loc>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ismail-porfolio.vercel.app/work/aether/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <loc>https://ismail-porfolio.vercel.app/work/lana-yoga/</loc>
+    <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
 </urlset>
